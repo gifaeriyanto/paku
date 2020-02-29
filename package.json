@@ -1,0 +1,44 @@
+{
+  "name": "paku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GifaEriyanto/paku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GifaEriyanto/paku/issues"
+  },
+  "homepage": "https://github.com/GifaEriyanto/paku#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-info": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/react": "^5.3.14",
+    "@types/jest": "^25.1.3",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.1",
+    "jest": "^25.1.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  }
+}
