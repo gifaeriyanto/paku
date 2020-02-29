@@ -1,12 +1,12 @@
 {
   "name": "paku",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "rm -rf ./lib && tsc",
-    "publish-patch": "rm -rf ./lib && tsc && npm publish && npm version patch",
+    "patch": "npm version patch",
     "build-storybook": "build-storybook",
     "test": "jest"
   },
