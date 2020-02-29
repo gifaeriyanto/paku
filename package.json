@@ -7,6 +7,7 @@
     "start": "start-storybook -p 6006",
     "build": "rm -rf ./lib && tsc",
     "patch": "npm version patch",
+    "patch-publish": "npm version patch && sh publish.sh",
     "build-storybook": "build-storybook",
     "test": "jest"
   },
