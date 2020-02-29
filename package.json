@@ -6,6 +6,7 @@
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "rm -rf ./lib && tsc",
+    "publish-patch": "rm -rf ./lib && tsc && npm publish && npm version patch",
     "build-storybook": "build-storybook",
     "test": "jest"
   },
