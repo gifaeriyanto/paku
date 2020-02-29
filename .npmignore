@@ -1,0 +1,42 @@
+.babelrc
+.gitignore
+.prettierrc
+yarn-error.log
+tsconfig.json
+
+# documentations
+docs/
+
+# webpack
+webpack.config.js
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
+
+# eslint
+.eslintrc
+.eslintrc.js
+.eslintrc.json
+.eslintignore
+
+# lock files
+*.lock
+package-lock.json
+
+# dev directories
+src/
+
+# storybook directories
+.storybook/
+storybook-static/
+stories/
+public/
+
+# editor settings
+.editorconfig
+*.code-workspace
+
+# jest
+jest.config.js
+jest.setup.js
+coverage/
