@@ -1,3 +1,3 @@
 # paku
 
-[WIP] Design System with basic style
+[WIP] Design System with basic style.
