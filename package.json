@@ -1,10 +1,10 @@
 {
   "name": "paku",
-  "version": "0.0.9",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "start-storybook -p 6006",
+    "start": "start-storybook -p 6001",
     "build": "rm -rf ./lib && tsc",
     "build-storybook": "build-storybook",
     "test": "jest"
@@ -20,12 +20,16 @@
     "url": "https://github.com/GifaEriyanto/paku/issues"
   },
   "homepage": "https://github.com/GifaEriyanto/paku#readme",
-  "dependencies": {},
+  "dependencies": {
+    "file-system": "^2.2.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@storybook/addon-a11y": "^5.3.14",
     "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-backgrounds": "^5.3.14",
     "@storybook/addon-info": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
