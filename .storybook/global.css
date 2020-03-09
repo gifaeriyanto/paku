@@ -1,0 +1,23 @@
+#root > div:not(#story-root) h1,
+#root > div:not(#story-root) h3,
+#root > div:not(#story-root) small {
+  display: none;
+}
+
+#root > div:not(#story-root) > div {
+  padding: 0 !important;
+  border-radius: 4px !important;
+}
+
+#root > div:not(#story-root) > div > div {
+  border-radius: 3px;
+  background-color: #072435;
+}
+
+#story-root {
+  margin-bottom: 40px;
+}
+
+#root {
+  padding: 30px;
+}

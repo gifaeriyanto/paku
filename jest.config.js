@@ -6,7 +6,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
-    '!src/**/*.{types,stories,styles,d}.{js,jsx,ts,tsx}',
+    '!src/**/*.{types,stories,d}.{js,jsx,ts,tsx}',
     '!src/**/index.{js,jsx,ts,tsx}',
   ],
   setupFilesAfterEnv: ['./jest.setup.js'],
