@@ -1,8 +1,9 @@
 {
   "name": "paku",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6001",
     "build": "rm -rf ./lib && tsc",
