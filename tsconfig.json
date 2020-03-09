@@ -13,6 +13,6 @@
     "esModuleInterop": true,
     "typeRoots": ["index.d.ts", "node_modules/@types"]
   },
-  "include": ["components/**/*.tsx", "theme/**/*.tsx", "index.tsx"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -15,13 +15,13 @@ export const ButtonBase = styled.button<IButtonBase>(
     '&:hover': {
       borderColor: '#3498db',
       boxShadow: '0 0 0 1px #3498db',
-      ...theme.button['&:hover'],
+      ...(theme?.button && theme?.button['&:hover']),
     },
     i: {
       color: '#000',
-      ...theme.button.i,
+      ...theme?.button?.i,
     },
-    ...theme.button,
+    ...theme?.button,
   },
   ({ customStyle }) => ({ ...customStyle }),
 );

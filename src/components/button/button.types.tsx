@@ -1,10 +1,8 @@
-import { TObjectStyles } from '../../theme/theme.types';
-
 export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
-  customStyle?: TObjectStyles;
+  customStyle?: any;
 }
 
 export interface IButtonBase {
-  customStyle?: TObjectStyles;
+  customStyle?: any;
   as?: React.ElementType;
 }

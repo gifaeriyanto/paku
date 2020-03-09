@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-  stories: ['../components/**/*.stories.(js|mdx)'],
+  stories: ['../src/**/*.stories.(js|mdx)'],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',
@@ -18,6 +20,12 @@ module.exports = {
     });
 
     config.resolve.extensions.push('.ts', '.tsx');
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      fs: path.resolve(__dirname, 'mocks/fsMock.js'),
+    };
+
     return config;
   },
 };
