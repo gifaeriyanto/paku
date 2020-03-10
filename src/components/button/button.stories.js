@@ -1,5 +1,5 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
+import { text, object } from '@storybook/addon-knobs';
 import { Button } from '../';
 
 export default {
@@ -10,18 +10,12 @@ export default {
 export const Basic = () => <Button>{text('Text', 'Button')}</Button>;
 export const CustomStyle = () => (
   <Button
-    customStyle={{
-      borderRadius: 50,
-      borderColor: '#000',
-      backgroundColor: '#000',
-      color: '#fff',
-      paddingLeft: 20,
-      paddingRight: 20,
+    customStyle={object('Custom Style', {
+      fontWeight: 600,
       '&:hover': {
-        borderColor: '#ccc',
-        boxShadow: '0 0 0 4px #ccc',
+        color: '#3498db',
       },
-    }}
+    })}
   >
     {text('Text', 'Button')}
   </Button>
