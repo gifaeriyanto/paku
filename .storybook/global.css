@@ -11,7 +11,7 @@
 
 #root > div:not(#story-root) > div > div {
   border-radius: 3px;
-  background-color: #072435;
+  background-color: #fff;
 }
 
 #story-root {

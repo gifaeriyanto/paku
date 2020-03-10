@@ -12,6 +12,7 @@ export const ButtonBase = styled.button<IButtonBase>(
     cursor: 'pointer',
     border: '1px solid #ccc',
     transition: 'box-shadow .1s linear',
+    backgroundColor: '#fff',
     '&:hover': {
       borderColor: '#3498db',
       boxShadow: '0 0 0 1px #3498db',

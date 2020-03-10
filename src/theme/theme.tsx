@@ -1,15 +1,15 @@
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
-let customTheme = {};
+const customTheme = {};
 
-try {
-  if (fs.existsSync(path.join(__dirname, '../../../../paku.config.js'))) {
-    customTheme = require('../../../../paku.config.js').theme;
-  }
-} catch (err) {
-  console.warn(err);
-}
+// try {
+//   if (fs.existsSync(path.join(__dirname, '../../../../paku.config.js'))) {
+//     customTheme = require('../../../../paku.config.js').theme;
+//   }
+// } catch (err) {
+//   console.warn(err);
+// }
 
 const theme: any = customTheme;
 
