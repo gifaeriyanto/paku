@@ -1,11 +1,26 @@
 import React from 'react';
 import { IButton } from './button.types';
-import { ButtonBase } from './button.styles';
+import { ButtonStyled } from './button.styles';
 
-const Button: React.FC<IButton> = ({ customStyle, children, ...props }) => (
-  <ButtonBase customStyle={customStyle} {...props}>
+const Button: React.FC<IButton> = ({
+  customStyle,
+  variant,
+  block,
+  children,
+  ...props
+}) => (
+  <ButtonStyled
+    variant={variant}
+    customStyle={customStyle}
+    block={block}
+    {...props}
+  >
     {children}
-  </ButtonBase>
+  </ButtonStyled>
 );
+
+Button.defaultProps = {
+  variant: 'primary',
+};
 
 export default Button;
