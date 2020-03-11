@@ -13,7 +13,7 @@
 
 #root > div:not(#story-root) > div > div {
   border-radius: 3px;
-  background-color: #fff;
+  background-color: #072435;
 }
 
 #root > div:not(#story-root) .simplebar-content * {

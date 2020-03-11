@@ -1,7 +1,7 @@
-import { TVariant } from '../../utils/types';
+import { TVariant, TCustomStyle } from '../../utils/types';
 
 interface IBase {
-  customStyle?: any;
+  customStyle?: TCustomStyle;
   block?: boolean;
 }
 
