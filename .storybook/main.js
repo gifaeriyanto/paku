@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/**/*.stories.(js|mdx)'],
+  stories: ['../src/**/*.stories.(jsx|mdx)'],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',
@@ -10,7 +10,7 @@ module.exports = {
     '@storybook/addon-a11y/register',
     '@storybook/addon-backgrounds/register',
   ],
-  webpackFinal: async config => {
+  webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve('babel-loader'),

@@ -13,7 +13,7 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 2018,
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
   plugins: ['react'],
   rules: {
@@ -21,5 +21,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-console': 'off',
+    '@typescript-eslint/indent': 'off',
+    'object-curly-newline': 'off',
   },
 };

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:400&display=swap');
+
 #root > div:not(#story-root) h1,
 #root > div:not(#story-root) h3,
 #root > div:not(#story-root) small {
@@ -14,8 +16,16 @@
   background-color: #fff;
 }
 
+#root > div:not(#story-root) .simplebar-content * {
+  font-family: 'Fira Code', monospace;
+}
+
 #story-root {
   margin-bottom: 40px;
+}
+
+.info-table {
+  display: none !important;
 }
 
 #root {
