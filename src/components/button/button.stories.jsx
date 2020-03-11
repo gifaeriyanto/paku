@@ -22,6 +22,7 @@ export const Basic = () => (
     variant={select('Variants', variants, 'primary')}
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
+    iconOnly
   >
     {text('Text', 'Button')}
   </Button>

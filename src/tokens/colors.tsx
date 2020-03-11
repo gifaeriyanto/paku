@@ -1,4 +1,17 @@
-const Color = {
+import { TVariant } from '../utils/types';
+
+type IColor = {
+  [key in TVariant]: {
+    main: string;
+    text: string;
+    hover: string;
+    active: string;
+    disabled: string;
+    outline: string;
+  };
+};
+
+const Color: IColor = {
   primary: {
     main: '#3366FF',
     text: '#FFFFFF',

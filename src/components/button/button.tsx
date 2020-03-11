@@ -3,9 +3,9 @@ import { IButton } from './button.types';
 import { ButtonStyled } from './button.styles';
 
 const Button: React.FC<IButton> = ({
-  customStyle,
-  variant,
+  variant = 'primary',
   block,
+  customStyle,
   children,
   ...props
 }) => (
@@ -18,9 +18,5 @@ const Button: React.FC<IButton> = ({
     {children}
   </ButtonStyled>
 );
-
-Button.defaultProps = {
-  variant: 'primary',
-};
 
 export default Button;

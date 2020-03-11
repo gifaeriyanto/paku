@@ -3,7 +3,7 @@ import { IButtonStyled } from './button.types';
 import Color from '../../tokens/colors';
 
 export const ButtonStyled = styled.button<IButtonStyled>(
-  ({ variant = 'primary', block }) => ({
+  ({ variant, block }) => ({
     appearance: 'unset',
     padding: '10px 14px',
     fontSize: 16,
@@ -25,7 +25,7 @@ export const ButtonStyled = styled.button<IButtonStyled>(
       boxShadow: `0 0 0 4px ${Color[variant].outline}`,
     },
   }),
-  ({ variant = 'primary', disabled }) => {
+  ({ variant, disabled }) => {
     if (disabled) {
       return {
         color: Color[variant].main,
