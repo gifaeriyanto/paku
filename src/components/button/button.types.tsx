@@ -1,17 +1,19 @@
 import { TVariant, TCustomStyle } from '../../utils/types';
 
-interface IBase {
+interface IButtonBase {
   customStyle?: TCustomStyle;
   block?: boolean;
+  outline?: boolean;
+  size?: 'small' | 'large';
 }
 
 export interface IButton
   extends React.HTMLAttributes<HTMLButtonElement>,
-    IBase {
+    IButtonBase {
   variant?: TVariant;
 }
 
-export interface IButtonStyled extends IBase {
+export interface IButtonStyled extends IButtonBase {
   variant: TVariant;
   as?: React.ElementType;
   disabled?: boolean;

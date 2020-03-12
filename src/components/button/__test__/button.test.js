@@ -17,6 +17,22 @@ test('Button Disabled', () => {
   expect(container).toMatchSnapshot();
 });
 
+test('Button Size', () => {
+  const { container } = render(
+    <>
+      <Button size="small">Small</Button>
+      <Button>Default</Button>
+      <Button size="large">Large</Button>
+    </>,
+  );
+  expect(container).toMatchSnapshot();
+});
+
+test('Button Outline Style', () => {
+  const { container } = render(<Button outline>Outline</Button>);
+  expect(container).toMatchSnapshot();
+});
+
 test('Button With Icon', () => {
   const { container } = render(
     <>

@@ -17,11 +17,18 @@ const variants = {
   Clean: 'clean',
 };
 
+const sizes = {
+  Small: 'small',
+  Normal: '',
+  Large: 'large',
+};
+
 export const Basic = () => (
   <Button
     variant={select('Variants', variants, 'primary')}
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
+    size={select('Size', sizes, '')}
     iconOnly
   >
     {text('Text', 'Button')}

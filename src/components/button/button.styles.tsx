@@ -2,11 +2,31 @@ import styled from '@emotion/styled';
 import { IButtonStyled } from './button.types';
 import Color from '../../tokens/colors';
 
+const getSize = (size?: 'small' | 'large') => {
+  switch (size) {
+    case 'small':
+      return {
+        padding: '8px 12px',
+        fontSize: 14,
+      };
+
+    case 'large':
+      return {
+        padding: '12px 16px',
+        fontSize: 18,
+      };
+
+    default:
+      return {
+        padding: '10px 14px',
+        fontSize: 16,
+      };
+  }
+};
+
 export const ButtonStyled = styled.button<IButtonStyled>(
-  ({ variant, block }) => ({
+  ({ variant, block, size }) => ({
     appearance: 'unset',
-    padding: '10px 14px',
-    fontSize: 16,
     borderRadius: 3,
     outline: 'none',
     cursor: 'pointer',
@@ -15,6 +35,7 @@ export const ButtonStyled = styled.button<IButtonStyled>(
     color: Color[variant].text,
     backgroundColor: Color[variant].main,
     width: block ? '100%' : 'auto',
+    ...getSize(size),
     '&:hover': {
       backgroundColor: Color[variant].hover,
     },
