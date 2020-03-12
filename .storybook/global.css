@@ -66,3 +66,7 @@
 .token.tag {
   color: #b7f270 !important;
 }
+
+.token.keyword {
+  color: #e3716c !important;
+}

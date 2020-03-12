@@ -19,17 +19,17 @@ const variants = {
 
 const sizes = {
   Small: 'small',
-  Normal: '',
+  Medium: 'medium',
   Large: 'large',
 };
 
 export const Basic = () => (
   <Button
     variant={select('Variants', variants, 'primary')}
+    size={select('Size', sizes, 'medium')}
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
-    size={select('Size', sizes, '')}
-    iconOnly
+    outline={boolean('Outline', false)}
   >
     {text('Text', 'Button')}
   </Button>
