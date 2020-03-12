@@ -32,8 +32,9 @@ export const CustomStyle = () => (
   <Button
     customStyle={object('Custom Style', {
       fontWeight: 600,
+      transition: 'all .1s linear',
       '&:hover': {
-        color: '#3498db',
+        transform: 'scale(1.1)',
       },
     })}
   >
