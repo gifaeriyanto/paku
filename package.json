@@ -8,6 +8,8 @@
     "start": "start-storybook -p 6001",
     "build": "rm -rf ./lib && tsc",
     "build-storybook": "build-storybook -o public",
+    "now": "build-storybook -o public && now",
+    "now-prod": "build-storybook -o public && now --prod",
     "test": "jest",
     "test-reset": "find . -name '*.snap' -delete",
     "lint": "eslint . --ext .tsx"
