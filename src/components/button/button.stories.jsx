@@ -59,3 +59,9 @@ export const WithIcon = () => (
     Search
   </Button>
 );
+
+Basic.story = {
+  parameters: {
+    jest: ['__test__/button.test.js'],
+  },
+};

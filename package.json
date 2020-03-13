@@ -12,6 +12,7 @@
     "now-prod": "build-storybook -o public && now --prod",
     "test": "jest",
     "test-reset": "find . -name '*.snap' -delete",
+    "test-report": "jest --json --outputFile=./.storybook/jest-test-reports.json",
     "lint": "eslint . --ext .tsx"
   },
   "repository": {
@@ -26,10 +27,10 @@
   },
   "homepage": "https://github.com/GifaEriyanto/paku#readme",
   "peerDependencies": {
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
     "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27"
+    "@emotion/styled": "^10.0.27",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "dependencies": {
     "react-icons": "^3.9.0"
@@ -44,6 +45,7 @@
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-backgrounds": "^5.3.14",
     "@storybook/addon-info": "^5.3.14",
+    "@storybook/addon-jest": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addons": "^5.3.14",
