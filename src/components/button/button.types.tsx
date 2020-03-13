@@ -2,9 +2,12 @@ import { TVariant, TCustomStyle } from '../../utils/types';
 
 interface IButtonBase {
   customStyle?: TCustomStyle;
+  size?: 'small' | 'large';
   block?: boolean;
   outline?: boolean;
-  size?: 'small' | 'large';
+  icon?: React.ReactNode;
+  iconRight?: boolean;
+  iconOnly?: boolean;
 }
 
 export interface IButton

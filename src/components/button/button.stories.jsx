@@ -1,6 +1,7 @@
 import React from 'react';
+import { FaSearch } from 'react-icons/fa';
 import { text, object, select, boolean } from '@storybook/addon-knobs';
-import { Button } from '..';
+import Button from './button';
 
 export default {
   title: 'Components/Button',
@@ -46,5 +47,15 @@ export const CustomStyle = () => (
     })}
   >
     Custom Button
+  </Button>
+);
+
+export const WithIcon = () => (
+  <Button
+    icon={<FaSearch />}
+    iconRight={boolean('Icon Right', false)}
+    iconOnly={boolean('Icon Only', false)}
+  >
+    Search
   </Button>
 );

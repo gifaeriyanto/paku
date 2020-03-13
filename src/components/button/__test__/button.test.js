@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaSearch } from 'react-icons/fa';
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import Button from '..';
@@ -67,9 +68,9 @@ test('Button Outline Style', () => {
 test('Button With Icon', () => {
   const { container } = render(
     <>
-      <Button icon="search" iconOnly />
-      <Button icon="search">Search</Button>
-      <Button icon="search" iconPosition="right">
+      <Button icon={<FaSearch />} iconOnly />
+      <Button icon={<FaSearch />}>Search</Button>
+      <Button icon={<FaSearch />} iconRight>
         Search
       </Button>
     </>,

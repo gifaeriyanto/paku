@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { IButtonStyled } from './button.types';
 import Color from '../../tokens/colors';
-import { TVariant } from '../../utils/types';
+import { TVariant, TCustomStyle } from '../../utils/types';
 
 const getSize = (size?: 'small' | 'large') => {
   switch (size) {
@@ -78,9 +78,43 @@ const isDisabled = (variant: TVariant, disabled?: boolean) => {
   return {};
 };
 
+const withIcon = (iconOnly?: boolean, iconRight?: boolean) => {
+  let finalStyle: TCustomStyle = {
+    '& > svg': {
+      marginRight: 10,
+    },
+  };
+
+  if (iconRight) {
+    finalStyle = {
+      ...finalStyle,
+      flexDirection: 'row-reverse',
+      '& > svg': {
+        marginLeft: 10,
+      },
+    };
+  }
+
+  if (iconOnly) {
+    finalStyle = {
+      '& > svg': {
+        marginTop: 2,
+        marginBottom: 2,
+      },
+      '& > span': {
+        display: 'none',
+      },
+    };
+  }
+
+  return finalStyle;
+};
+
 export const ButtonStyled = styled.button<IButtonStyled>(
-  ({ variant, block, size, outline, disabled }) => ({
+  ({ variant, block, size, outline, disabled, iconOnly, iconRight }) => ({
     appearance: 'unset',
+    display: 'flex',
+    alignItems: 'center',
     borderRadius: 3,
     outline: 'none',
     cursor: 'pointer',
@@ -97,6 +131,7 @@ export const ButtonStyled = styled.button<IButtonStyled>(
     '&:focus': {
       boxShadow: `0 0 0 4px ${Color[variant].outline}`,
     },
+    ...withIcon(iconOnly, iconRight),
     ...isBlock(block),
     ...getSize(size),
     ...isOutline(variant, outline),

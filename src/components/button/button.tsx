@@ -7,16 +7,31 @@ const Button: React.FC<IButton> = ({
   block,
   customStyle,
   children,
+  icon,
+  iconRight,
+  iconOnly,
   ...props
-}) => (
-  <ButtonStyled
-    variant={variant}
-    customStyle={customStyle}
-    block={block}
-    {...props}
-  >
-    {children}
-  </ButtonStyled>
-);
+}) => {
+  const renderIcon = () => {
+    if (icon) {
+      return icon;
+    }
+    return null;
+  };
+
+  return (
+    <ButtonStyled
+      variant={variant}
+      customStyle={customStyle}
+      block={block}
+      iconRight={iconRight}
+      iconOnly={iconOnly}
+      {...props}
+    >
+      {renderIcon()}
+      <span>{children}</span>
+    </ButtonStyled>
+  );
+};
 
 export default Button;
