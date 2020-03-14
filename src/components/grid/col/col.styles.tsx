@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { MediaQuery } from '../../../tokens';
-import { ICol } from '../grid.types';
+import { ICol } from './col.types';
 
 const GRID_COLUMN: number = 12;
 
