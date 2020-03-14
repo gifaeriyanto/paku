@@ -1,4 +1,4 @@
-import { TVariant } from '../utils/types';
+import { TVariant } from '../../utils/types';
 
 type IColor = {
   [key in TVariant]: {
