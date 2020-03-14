@@ -8,12 +8,12 @@ const handleClick = (e) => {
   return e;
 };
 
-test('Button Render Test', () => {
+test('Button basic render', () => {
   const { container } = render(<Button>Button</Button>);
   expect(container).toMatchSnapshot();
 });
 
-test('Button Event Test', () => {
+test('Button event click and doubleclick', () => {
   const { container, getByText } = render(
     <Button onClick={handleClick}>Click</Button>,
   );
@@ -24,7 +24,7 @@ test('Button Event Test', () => {
   expect(container).toMatchSnapshot();
 });
 
-test('Button Variants', () => {
+test('Button variants', () => {
   const { container } = render(
     <>
       <Button variant="primary">Button</Button>
@@ -39,17 +39,17 @@ test('Button Variants', () => {
   expect(container).toMatchSnapshot();
 });
 
-test('Button Block', () => {
+test('Button block', () => {
   const { container } = render(<Button block>Button</Button>);
   expect(container).toMatchSnapshot();
 });
 
-test('Button Disabled', () => {
+test('Button disabled', () => {
   const { container } = render(<Button disabled>Button</Button>);
   expect(container).toMatchSnapshot();
 });
 
-test('Button Size', () => {
+test('Button size', () => {
   const { container } = render(
     <>
       <Button size="small">Button</Button>
@@ -60,12 +60,12 @@ test('Button Size', () => {
   expect(container).toMatchSnapshot();
 });
 
-test('Button Outline Style', () => {
+test('Button outline style', () => {
   const { container } = render(<Button outline>Button</Button>);
   expect(container).toMatchSnapshot();
 });
 
-test('Button With Icon', () => {
+test('Button with icon', () => {
   const { container } = render(
     <>
       <Button icon={<FaSearch />} iconOnly />

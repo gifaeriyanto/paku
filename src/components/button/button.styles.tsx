@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { IButtonStyled } from './button.types';
-import Color from '../../tokens/colors';
+import { Color } from '../../tokens';
 import { TVariant, TCustomStyle } from '../../utils/types';
 
-const getSize = (size?: 'small' | 'large') => {
+const setSize = (size?: 'small' | 'large') => {
   switch (size) {
     case 'small':
       return {
@@ -133,7 +133,7 @@ export const ButtonStyled = styled.button<IButtonStyled>(
     },
     ...withIcon(iconOnly, iconRight),
     ...isBlock(block),
-    ...getSize(size),
+    ...setSize(size),
     ...isOutline(variant, outline),
     ...isDisabled(variant, disabled),
   }),
