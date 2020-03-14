@@ -5,7 +5,6 @@ module.exports = {
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-knobs',
-    '@storybook/addon-info',
     '@storybook/addon-a11y/register',
     '@storybook/addon-backgrounds/register',
     '@storybook/addon-jest/register',
@@ -25,6 +24,12 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       fs: path.resolve(__dirname, 'mocks/fsMock.js'),
+    };
+
+    config.performance = {
+      ...config.performance,
+      maxEntrypointSize: 5120000,
+      maxAssetSize: 5120000,
     };
 
     return config;
