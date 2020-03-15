@@ -1,7 +1,7 @@
-import { TVariant } from '../../utils/types';
+import { TVariants } from '../../utils/types';
 
 type IColor = {
-  [key in TVariant]: {
+  [key in TVariants]: {
     main: string;
     text: string;
     hover: string;

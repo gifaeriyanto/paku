@@ -1,4 +1,4 @@
-import { TVariant, TCustomStyle } from '../../utils/types';
+import { TVariants, TCustomStyle } from '../../utils/types';
 
 interface IButtonBase {
   customStyle?: TCustomStyle;
@@ -13,11 +13,11 @@ interface IButtonBase {
 export interface IButton
   extends React.HTMLAttributes<HTMLButtonElement>,
     IButtonBase {
-  variant?: TVariant;
+  variant?: TVariants;
 }
 
 export interface IButtonStyled extends IButtonBase {
-  variant: TVariant;
+  variant: TVariants;
   as?: React.ElementType;
   disabled?: boolean;
 }

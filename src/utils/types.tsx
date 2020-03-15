@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-export type TVariant =
+export type TVariants =
   | 'primary'
   | 'secondary'
   | 'success'

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { IButtonStyled } from './button.types';
 import { Color } from '../../tokens';
-import { TVariant, TCustomStyle } from '../../utils/types';
+import { TVariants, TCustomStyle } from '../../utils/types';
 
 const setSize = (size?: 'small' | 'large') => {
   switch (size) {
@@ -36,7 +36,7 @@ const isBlock = (block?: boolean) => {
   };
 };
 
-const isOutline = (variant: TVariant, outline?: boolean) => {
+const isOutline = (variant: TVariants, outline?: boolean) => {
   if (outline) {
     return {
       backgroundColor: '#fff',
@@ -57,7 +57,7 @@ const isOutline = (variant: TVariant, outline?: boolean) => {
   return {};
 };
 
-const isDisabled = (variant: TVariant, disabled?: boolean) => {
+const isDisabled = (variant: TVariants, disabled?: boolean) => {
   if (disabled) {
     return {
       color: Color[variant].main,
