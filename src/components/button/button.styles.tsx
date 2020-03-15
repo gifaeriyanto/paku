@@ -29,6 +29,7 @@ const isBlock = (block?: boolean) => {
   if (block) {
     return {
       width: '100%',
+      justifyContent: 'center',
     };
   }
   return {
