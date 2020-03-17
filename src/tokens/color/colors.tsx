@@ -23,12 +23,12 @@ const Color: IColor = {
     outline: '#98F2FC',
   },
   secondary: {
-    main: '#FFA500',
+    main: '#0256E2',
     text: '#FFFFFF',
-    hover: '#DB8500',
-    active: '#B76900',
-    disabled: '#FFF4CC',
-    outline: '#FFE699',
+    hover: '#0142C2',
+    active: '#0131A2',
+    disabled: '#CBE5FD',
+    outline: '#98C9FC',
   },
   danger: {
     main: '#FF5238',
