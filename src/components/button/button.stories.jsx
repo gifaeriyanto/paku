@@ -11,26 +11,29 @@ export default {
 const variants = {
   Primary: 'primary',
   Secondary: 'secondary',
-  Success: 'success',
-  Warning: 'warning',
   Danger: 'danger',
   Neutral: 'neutral',
-  Clean: 'clean',
 };
 
 const sizes = {
   Small: 'small',
-  Medium: 'medium',
+  Medium: false,
   Large: 'large',
+};
+
+const outlines = {
+  None: false,
+  Common: true,
+  'With Color': 'withColor',
 };
 
 export const Basic = () => (
   <Button
     variant={select('Variants', variants, 'primary')}
-    size={select('Size', sizes, 'medium')}
+    size={select('Size', sizes, false)}
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
-    outline={boolean('Outline', false)}
+    outline={select('Outline', outlines, false)}
   >
     {text('Text', 'Button')}
   </Button>

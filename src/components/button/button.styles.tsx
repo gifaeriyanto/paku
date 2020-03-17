@@ -37,11 +37,16 @@ const isBlock = (block?: boolean) => {
   };
 };
 
-const isOutline = (variant: TVariants, outline?: boolean) => {
+const isOutline = (variant: TVariants, outline?: boolean | 'withColor') => {
+  let borderColor = Color.border;
+  if (outline === 'withColor') {
+    borderColor = Color[variant].main;
+  }
+
   if (outline) {
     return {
       backgroundColor: '#fff',
-      border: `1px solid ${Color[variant].main}`,
+      border: `1px solid ${borderColor}`,
       color: Color[variant].main,
       '&:hover': {
         backgroundColor: '#fff',
@@ -61,7 +66,7 @@ const isOutline = (variant: TVariants, outline?: boolean) => {
 const isDisabled = (variant: TVariants, disabled?: boolean) => {
   if (disabled) {
     return {
-      color: Color[variant].main,
+      color: `${Color[variant].main}80`,
       backgroundColor: Color[variant].disabled,
       cursor: 'not-allowed',
       '&:hover': {

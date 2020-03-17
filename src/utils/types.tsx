@@ -1,13 +1,6 @@
 import { CSSProperties } from 'react';
 
-export type TVariants =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'neutral'
-  | 'clean';
+export type TVariants = 'primary' | 'secondary' | 'danger' | 'neutral';
 
 export type TCustomStyle =
   | CSSProperties

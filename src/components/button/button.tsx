@@ -4,6 +4,7 @@ import { ButtonStyled } from './button.styles';
 
 const Button: React.FC<IButton> = ({
   variant = 'primary',
+  outline,
   block,
   customStyle,
   children,
@@ -23,6 +24,7 @@ const Button: React.FC<IButton> = ({
     <ButtonStyled
       variant={variant}
       customStyle={customStyle}
+      outline={outline}
       block={block}
       iconRight={iconRight}
       iconOnly={iconOnly}

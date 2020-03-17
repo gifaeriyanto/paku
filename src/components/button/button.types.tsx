@@ -4,7 +4,7 @@ interface IButtonBase {
   customStyle?: TCustomStyle;
   size?: 'small' | 'large';
   block?: boolean;
-  outline?: boolean;
+  outline?: boolean | 'withColor';
   icon?: React.ReactNode;
   iconRight?: boolean;
   iconOnly?: boolean;
