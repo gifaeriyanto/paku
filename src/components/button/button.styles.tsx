@@ -1,26 +1,27 @@
 import styled from '@emotion/styled';
 import { IButtonStyled } from './button.types';
-import { Color } from '../../tokens';
+import { Color, Typography, Radius } from '../../tokens';
 import { TVariants, TCustomStyle } from '../../utils/types';
+import { isOutline } from '../../utils/commonStyles';
 
 const setSize = (size?: 'small' | 'large') => {
   switch (size) {
     case 'small':
       return {
-        padding: '8px 12px',
-        fontSize: 14,
+        padding: '6px 9px',
+        fontSize: 12,
       };
 
     case 'large':
       return {
-        padding: '12px 16px',
-        fontSize: 18,
+        padding: '10px 15px',
+        fontSize: 16,
       };
 
     default:
       return {
-        padding: '10px 14px',
-        fontSize: 16,
+        padding: '8px 12px',
+        fontSize: 14,
       };
   }
 };
@@ -35,32 +36,6 @@ const isBlock = (block?: boolean) => {
   return {
     width: 'auto',
   };
-};
-
-const isOutline = (variant: TVariants, outline?: boolean | 'withColor') => {
-  let borderColor = Color.border;
-  if (outline === 'withColor') {
-    borderColor = Color[variant].main;
-  }
-
-  if (outline) {
-    return {
-      backgroundColor: '#fff',
-      border: `1px solid ${borderColor}`,
-      color: Color[variant].main,
-      '&:hover': {
-        backgroundColor: '#fff',
-        color: Color[variant].hover,
-        border: `1px solid ${Color[variant].hover}`,
-      },
-      '&:active': {
-        backgroundColor: '#fff',
-        color: Color[variant].active,
-        border: `1px solid ${Color[variant].active}`,
-      },
-    };
-  }
-  return {};
 };
 
 const isDisabled = (variant: TVariants, disabled?: boolean) => {
@@ -118,10 +93,11 @@ const withIcon = (iconOnly?: boolean, iconRight?: boolean) => {
 
 export const ButtonStyled = styled.button<IButtonStyled>(
   ({ variant, block, size, outline, disabled, iconOnly, iconRight }) => ({
+    ...Typography.base,
     appearance: 'unset',
     display: 'flex',
     alignItems: 'center',
-    borderRadius: 3,
+    borderRadius: Radius.normal,
     outline: 'none',
     cursor: 'pointer',
     border: '1px solid transparent',
