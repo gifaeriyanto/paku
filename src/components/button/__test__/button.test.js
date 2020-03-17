@@ -29,11 +29,8 @@ test('Button variants', () => {
     <>
       <Button variant="primary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="success">Button</Button>
-      <Button variant="warning">Button</Button>
       <Button variant="danger">Button</Button>
       <Button variant="neutral">Button</Button>
-      <Button variant="clean">Button</Button>
     </>,
   );
   expect(container).toMatchSnapshot();
@@ -61,7 +58,12 @@ test('Button size', () => {
 });
 
 test('Button outline style', () => {
-  const { container } = render(<Button outline>Button</Button>);
+  const { container } = render(
+    <>
+      <Button outline>Button</Button>
+      <Button outline="withColor">Button</Button>
+    </>,
+  );
   expect(container).toMatchSnapshot();
 });
 

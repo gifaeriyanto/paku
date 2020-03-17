@@ -17,7 +17,7 @@ const variants = {
 
 const sizes = {
   Small: 'small',
-  Medium: false,
+  Medium: 'medium',
   Large: 'large',
 };
 
@@ -29,8 +29,8 @@ const outlines = {
 
 export const Basic = () => (
   <Button
-    variant={select('Variants', variants, 'primary')}
-    size={select('Size', sizes, false)}
+    variant={select('Variant', variants, 'primary')}
+    size={select('Size', sizes, 'medium')}
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
     outline={select('Outline', outlines, false)}
