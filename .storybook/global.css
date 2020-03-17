@@ -70,3 +70,7 @@
 .token.keyword {
   color: #e3716c !important;
 }
+
+.token.function {
+  color: #c7ab43 !important;
+}
