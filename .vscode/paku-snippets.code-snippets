@@ -1,0 +1,58 @@
+{
+	"React Component": {
+		"scope": "typescriptreact",
+		"prefix": "rc",
+		"body": [
+			"import React from 'react';",
+			"",
+			"const $1: React.FC = () => {",
+			"  return ($2);",
+			"};",
+			"",
+			"export default $1;"
+		],
+		"description": "Create component"
+	},
+	"React Styled Component": {
+		"scope": "typescriptreact",
+		"prefix": "rc-styled",
+		"body": [
+			"import styled from '@emotion/styled';",
+			"",
+			"export const $1 = styled.$2({",
+			"  $3",
+			"});"
+		],
+		"description": "Create styled component with emotion"
+	},
+	"React Component Interface": {
+		"scope": "typescriptreact",
+		"prefix": "rc-types",
+		"body": [
+			"export interface I$1 {",
+			"  $2",
+			"}"
+		],
+		"description": "Create component interface"
+	},
+	"React Component Test": {
+		"scope": "javascript",
+		"prefix": "rc-test",
+		"body": [
+			"import React from 'react';",
+			"import '@testing-library/jest-dom/extend-expect';",
+			"import { render } from '@testing-library/react';",
+			"import $1 from '..';",
+			"",
+			"describe('$2', () => {",
+			"  test('Basic render', () => {",
+			"    const { container } = render(",
+			"      $3",
+			"    );",
+			"    expect(container).toMatchSnapshot();",
+			"  });",
+			"});",
+		],
+		"description": "Create component test"
+	}
+}
