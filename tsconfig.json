@@ -11,8 +11,16 @@
     "sourceMap": true,
     "jsx": "react",
     "esModuleInterop": true,
-    "typeRoots": ["index.d.ts", "node_modules/@types"]
+    "typeRoots": [
+      "index.d.ts",
+      "node_modules/@types"
+    ]
   },
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
