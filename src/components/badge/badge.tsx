@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { BadgeStyled, CloseBadge } from './badge.styles';
 import { IBadge } from './badge.types';
@@ -14,17 +14,20 @@ const Badge: React.FC<IBadge> = ({
 }) => {
   const [show, setShow] = useState(true);
 
-  const handleClose = () => {
-    setShow(false);
-    if (onClose) {
+  useEffect(() => {
+    if (!show && onClose) {
       onClose();
     }
+  }, [show, onClose]);
+
+  const handleClose = () => {
+    setShow(false);
   };
 
   const isCloseable = () => {
     if (onClose || closeable) {
       return (
-        <CloseBadge onClick={handleClose}>
+        <CloseBadge onClick={handleClose} data-testid="badge-close">
           <IoMdClose />
         </CloseBadge>
       );

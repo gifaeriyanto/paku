@@ -54,6 +54,6 @@ export const ActionClose = () => (
 
 Basic.story = {
   parameters: {
-    jest: ['__test__/Badge.test.js'],
+    jest: ['__test__/badge.test.js'],
   },
 };
