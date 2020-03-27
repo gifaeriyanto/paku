@@ -13,4 +13,6 @@ type TColor = {
 
 export interface IColor extends TColor {
   border: string;
+  white: string;
+  black: string;
 }

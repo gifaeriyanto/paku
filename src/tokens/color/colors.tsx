@@ -47,6 +47,8 @@ const Color: IColor = {
     outline: '#D6EAEE',
   },
   border: '#D2DCE2',
+  white: '#FFFFFF',
+  black: '#000000',
 };
 
 export default Color;
