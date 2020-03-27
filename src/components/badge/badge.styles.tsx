@@ -34,12 +34,12 @@ export const BadgeStyled = styled.div<IBadgeStyled>(
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    ...setSize(size),
-    ...isOutline(variant, outline),
     marginLeft: 4,
     '&:first-of-type': {
       marginLeft: 0,
     },
+    ...setSize(size),
+    ...isOutline(variant, outline),
   }),
   ({ customStyle }) => ({ ...customStyle }),
 );
