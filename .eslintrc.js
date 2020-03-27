@@ -24,5 +24,6 @@ module.exports = {
     'no-console': 'off',
     '@typescript-eslint/indent': 'off',
     'object-curly-newline': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
   },
 };
