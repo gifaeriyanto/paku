@@ -3,6 +3,7 @@ import { IButtonStyled } from './button.types';
 import { Color, Typography, Radius } from '../../tokens';
 import { TVariants, TCustomStyle } from '../../utils/types';
 import { isOutline } from '../../utils/commonStyles';
+import Transition from '../../utils/transition';
 
 const setSize = (size?: 'small' | 'large') => {
   switch (size) {
@@ -101,9 +102,12 @@ export const ButtonStyled = styled.button<IButtonStyled>(
     outline: 'none',
     cursor: 'pointer',
     border: '1px solid transparent',
-    transition: 'box-shadow .1s linear, background-color .1s linear',
     color: Color[variant].text,
     backgroundColor: Color[variant].main,
+    transition: Transition(
+      ['box-shadow', 'background-color', 'color', 'border-color'],
+      '.1s linear',
+    ),
     '&:hover': {
       backgroundColor: Color[variant].hover,
     },

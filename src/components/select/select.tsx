@@ -7,10 +7,17 @@ import { ISelect, IMenuList } from './select.types';
 
 const optionHeight = 37;
 
+const setHeight = (length: number, maxHeight: number): number => {
+  if (length > 8) {
+    return maxHeight;
+  }
+  return length * optionHeight;
+};
+
 const MenuList = ({ options, maxHeight, getValue, children }: IMenuList) => (
   <List
     width="100%"
-    height={children.length > 8 ? maxHeight : children.length * optionHeight}
+    height={setHeight(children.length, maxHeight)}
     itemCount={children.length}
     itemSize={optionHeight}
     initialScrollOffset={options.indexOf(getValue()[0]) * optionHeight}
@@ -56,6 +63,7 @@ const Select: React.FC<ISelect> = ({
         components={customComponents}
         classNamePrefix="paku-select"
         filterOption={createFilter({ ignoreAccents: false })}
+        data-testid="select"
         {...props}
       />
     </SelectWrapper>

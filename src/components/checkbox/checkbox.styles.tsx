@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { ICheckboxBox, ICheckboxStyled } from './checkbox.types';
 import { Color, Typography, Radius } from '../../tokens';
+import Transition from '../../utils/transition';
 
 const isDisabled = (checked: boolean, disabled: boolean) => {
   const color = checked ? `${Color.primary.main}80` : 'transparent';
@@ -77,7 +78,7 @@ export const CheckboxBox = styled.div<ICheckboxBox>(({ checked }) => ({
   borderRadius: Radius.normal,
   marginRight: 6,
   outline: 'none',
-  transition: 'box-shadow .1s linear, background-color .1s linear',
+  transition: Transition(['box-shadow', 'background-color'], '.1s linear'),
   ...isChecked(checked),
 }));
 
