@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-interface ISampleContent {
-  color: string;
-  height: number;
+export interface ISampleContent {
+  color?: string;
+  height?: number;
 }
 
 const ContentStyled = styled.div<ISampleContent>(({ color, height }) => ({

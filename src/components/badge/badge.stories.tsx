@@ -2,6 +2,7 @@ import React from 'react';
 import { text, object, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Badge from './badge';
+import { TVariants } from '../../utils/types';
 
 export default {
   title: 'Components/Badge',
@@ -21,22 +22,18 @@ const sizes = {
   Large: 'large',
 };
 
-const outlines = {
-  None: false,
-  Common: true,
-  'With Color': 'withColor',
-};
-
 export const Basic = () => (
   <Badge
-    variant={select('Variant', variants, 'primary')}
-    size={select('Size', sizes, 'medium')}
-    outline={select('Outline', outlines, false)}
+    variant={select('Variant', variants, 'primary') as TVariants}
+    size={select('Size', sizes, 'medium') as 'small' | 'large'}
+    outline={boolean('Outline', false)}
     closeable={boolean('Closeable', false)}
   >
     {text('Text', 'Badge')}
   </Badge>
 );
+
+export const OutlineWithColor = () => <Badge outline="withColor">Badge</Badge>;
 
 export const CustomStyle = () => (
   <Badge

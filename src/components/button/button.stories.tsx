@@ -2,6 +2,7 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { text, object, select, boolean } from '@storybook/addon-knobs';
 import Button from './button';
+import { TVariants } from '../../utils/types';
 
 export default {
   title: 'Components/Button',
@@ -21,22 +22,20 @@ const sizes = {
   Large: 'large',
 };
 
-const outlines = {
-  None: false,
-  Common: true,
-  'With Color': 'withColor',
-};
-
 export const Basic = () => (
   <Button
-    variant={select('Variant', variants, 'primary')}
-    size={select('Size', sizes, 'medium')}
+    variant={select('Variant', variants, 'primary') as TVariants}
+    size={select('Size', sizes, 'medium') as 'small' | 'large'}
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
-    outline={select('Outline', outlines, false)}
+    outline={boolean('Outline', false)}
   >
     {text('Text', 'Button')}
   </Button>
+);
+
+export const OutlineWithColor = () => (
+  <Button outline="withColor">Button</Button>
 );
 
 export const CustomStyle = () => (

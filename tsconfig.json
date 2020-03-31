@@ -11,6 +11,7 @@
     "sourceMap": true,
     "jsx": "react",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "typeRoots": [
       "index.d.ts",
       "node_modules/@types"

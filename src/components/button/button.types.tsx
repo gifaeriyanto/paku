@@ -8,6 +8,7 @@ interface IButtonBase {
   icon?: React.ReactNode;
   iconRight?: boolean;
   iconOnly?: boolean;
+  disabled?: boolean;
 }
 
 export interface IButton
@@ -19,5 +20,4 @@ export interface IButton
 export interface IButtonStyled extends IButtonBase {
   variant: TVariants;
   as?: React.ElementType;
-  disabled?: boolean;
 }
