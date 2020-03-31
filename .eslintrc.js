@@ -25,5 +25,9 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     'object-curly-newline': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    '@typescript-eslint/no-unused-expressions': [
+      'error',
+      { allowTernary: true, allowShortCircuit: true },
+    ],
   },
 };
