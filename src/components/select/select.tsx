@@ -5,7 +5,7 @@ import { FixedSizeList as List } from 'react-window';
 import { customStyles, SelectWrapper, SelectOption } from './select.styles';
 import { ISelect, IMenuList } from './select.types';
 
-const optionHeight = 35;
+const optionHeight = 37;
 
 const MenuList = ({ options, maxHeight, getValue, children }: IMenuList) => (
   <List
@@ -26,6 +26,7 @@ const MenuList = ({ options, maxHeight, getValue, children }: IMenuList) => (
 const Select: React.FC<ISelect> = ({
   variant = 'primary',
   customStyle,
+  customOption,
   icon,
   ...props
 }) => {
@@ -35,6 +36,16 @@ const Select: React.FC<ISelect> = ({
         {icon || <IoIosArrowDown />}
       </components.DropdownIndicator>
     ),
+    Option: (defaultProps: any) => {
+      if (customOption) {
+        return (
+          <components.Option {...defaultProps}>
+            {customOption(defaultProps.data)}
+          </components.Option>
+        );
+      }
+      return <components.Option {...defaultProps} />;
+    },
     MenuList,
   };
 
