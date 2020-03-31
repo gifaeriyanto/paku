@@ -13,6 +13,15 @@ describe('Badge', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('rounded', () => {
+    const { container } = render(
+      <>
+        <Badge rounded>Badge</Badge>
+      </>,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   test('variants', () => {
     const { container } = render(
       <>

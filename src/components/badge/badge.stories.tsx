@@ -28,6 +28,7 @@ export const Basic = () => (
     size={select('Size', sizes, 'medium') as 'small' | 'large'}
     outline={boolean('Outline', false)}
     closeable={boolean('Closeable', false)}
+    rounded={boolean('Rounded', false)}
   >
     {text('Text', 'Badge')}
   </Badge>

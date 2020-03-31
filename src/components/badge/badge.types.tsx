@@ -5,6 +5,7 @@ interface IBadgeBase {
   size?: 'small' | 'large';
   outline?: boolean | 'withColor';
   closeable?: boolean;
+  rounded?: boolean;
 }
 
 export interface IBadge extends IBadgeBase {

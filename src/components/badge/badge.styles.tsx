@@ -25,8 +25,19 @@ const setSize = (size?: 'small' | 'large') => {
   }
 };
 
+const isRounded = (rounded?: boolean) => {
+  if (rounded) {
+    return {
+      borderRadius: Radius.round,
+    };
+  }
+  return {
+    borderRadius: Radius.normal,
+  };
+};
+
 export const BadgeStyled = styled.div<IBadgeStyled>(
-  ({ variant, size, outline }) => ({
+  ({ variant, size, outline, rounded }) => ({
     ...Typography.base,
     color: Color[variant].text,
     backgroundColor: Color[variant].main,
@@ -35,11 +46,13 @@ export const BadgeStyled = styled.div<IBadgeStyled>(
     alignItems: 'center',
     justifyContent: 'space-between',
     marginLeft: 4,
+    fontWeight: 600,
     '&:first-of-type': {
       marginLeft: 0,
     },
     ...setSize(size),
-    ...isOutline(variant, outline),
+    ...isOutline(variant, outline, true),
+    ...isRounded(rounded),
   }),
   ({ customStyle }) => ({ ...customStyle }),
 );

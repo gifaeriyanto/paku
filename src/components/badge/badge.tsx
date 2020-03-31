@@ -11,6 +11,7 @@ const Badge: React.FC<IBadge> = ({
   closeable,
   onClose,
   children,
+  rounded,
 }) => {
   const [show, setShow] = useState(true);
 
@@ -41,6 +42,7 @@ const Badge: React.FC<IBadge> = ({
         variant={variant}
         size={size}
         outline={outline}
+        rounded={rounded}
         customStyle={customStyle}
       >
         <span>{children}</span>
