@@ -45,7 +45,7 @@
 			"import $1 from '..';",
 			"",
 			"describe('$2', () => {",
-			"  test('Basic render', () => {",
+			"  test('basic render', () => {",
 			"    const { container } = render(",
 			"      $3",
 			"    );",
