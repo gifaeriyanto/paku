@@ -26,12 +26,21 @@ const generateOptions = (
   length: number,
   keyValue = 'value',
   keyLabel = 'label',
+  withAvatar?: boolean,
 ) => {
-  const options: TOption[] = Array.from(new Array(length), (_, index) => ({
-    [`${keyLabel}`]: faker.name.findName(),
-    [`${keyValue}`]: index.toString(),
-    avatar: faker.image.avatar(),
-  }));
+  const options: TOption[] = Array.from(new Array(length), (_, index) => {
+    const data = {
+      [`${keyLabel}`]: faker.name.findName(),
+      [`${keyValue}`]: index.toString(),
+    };
+    if (withAvatar) {
+      return {
+        ...data,
+        avatar: faker.image.avatar(),
+      };
+    }
+    return data;
+  });
   return options;
 };
 
@@ -58,7 +67,7 @@ export const CustomOptions = () => (
 
 export const CustomOptionsStyle = () => (
   <Select
-    options={generateOptions(3, 'id', 'name')}
+    options={generateOptions(3, 'id', 'name', true)}
     getOptionValue={(option: TOption) => option.id}
     getOptionLabel={(option: TOption) => option.name}
     customOption={(option: TOption) => (
