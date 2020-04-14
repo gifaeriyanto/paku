@@ -51,12 +51,28 @@
     ],
     "description": "Create component test"
   },
-  "Separator": {
-    "scope": "typescriptreact, javascript",
-    "prefix": "rc-separator",
+  "React Component Story": {
+    "scope": "typescriptreact",
+    "prefix": "rc-story",
     "body": [
-      "// // // // // // // // // // // // // // // // // // // // // // // // //"
+      "import React from 'react';",
+      "import $1 from './$2';",
+      "",
+      "export default {",
+      "  title: '$3/$1',",
+      "  component: $1,",
+      "};",
+      "",
+      "export const Basic = () => (",
+      "  $4",
+      ");",
+      "",
+      "Basic.story = {",
+      "  parameters: {",
+      "    jest: ['__test__/$2.test.js'],",
+      "  },",
+      "};"
     ],
-    "description": "Create separator"
+    "description": "Create component story"
   }
 }
