@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { v1 as uuidv1 } from 'uuid';
+import React, { useState } from 'react';
 import { IoMdCheckmark } from 'react-icons/io';
 import { ICheckbox } from './checkbox.types';
 import { CheckboxStyled, CheckboxBox, CheckboxLabel } from './checkbox.styles';
@@ -14,14 +13,7 @@ const Checkbox: React.FC<ICheckbox> = ({
   onChange,
   ...props
 }) => {
-  const [id, setId] = useState('');
   const [isChecked, setIsChecked] = useState(Boolean(checked));
-
-  useEffect(() => {
-    if (!id) {
-      setId(uuidv1());
-    }
-  }, [id]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(e.currentTarget.checked);
@@ -37,7 +29,6 @@ const Checkbox: React.FC<ICheckbox> = ({
     >
       <input
         type="checkbox"
-        id={id}
         checked={isChecked}
         onChange={handleChange}
         disabled={disabled}
