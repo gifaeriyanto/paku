@@ -9,12 +9,12 @@ const isDisabled = (checked: boolean, disabled: boolean) => {
   if (disabled) {
     return {
       cursor: 'not-allowed',
-      '.paku-checkbox__box': {
+      '.paku-checkbox-box': {
         backgroundColor: Color.primary.disabled,
         borderColor: Color.primary.disabled,
         color,
       },
-      '.paku-checkbox__label': {
+      '.paku-checkbox-label': {
         opacity: 0.5,
       },
     };
@@ -25,7 +25,7 @@ const isDisabled = (checked: boolean, disabled: boolean) => {
 const isError = (error: boolean, checked: boolean) => {
   if (error && !checked) {
     return {
-      '.paku-checkbox__box': {
+      '.paku-checkbox-box': {
         borderColor: Color.danger.main,
       },
     };
@@ -44,7 +44,7 @@ export const CheckboxStyled = styled.label<ICheckboxStyled>(
     input: {
       clip: 'rect(0 0 0 0)',
       position: 'absolute',
-      '&:focus + .paku-checkbox__box': {
+      '&:focus + .paku-checkbox-box': {
         boxShadow: `0 0 0 4px ${Color.primary.outline}`,
         borderColor: Color.primary.main,
       },
