@@ -8,6 +8,16 @@ import './global.css';
 // Jest test result
 import results from './jest-test-reports.json';
 
+addParameters({
+  backgrounds: [{ name: 'dark', value: '#000' }],
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+  options: {
+    showRoots: true,
+  },
+});
+
 addDecorator(
   withInfo({
     header: false,
@@ -26,10 +36,3 @@ addDecorator(
     results,
   }),
 );
-
-addParameters({
-  backgrounds: [{ name: 'dark', value: '#000' }],
-  viewport: {
-    viewports: INITIAL_VIEWPORTS,
-  },
-});
