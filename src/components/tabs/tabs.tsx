@@ -1,58 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { TabsNavs, TabsNav, TabsPanels } from './tabs.styles';
-import { ITabs, ISubTabs, ITabsNavAndPanel, ITabsContext } from './tabs.types';
-
-const TabsContext = React.createContext<ITabsContext>({
-  activeTab: '',
-  setActiveTab: undefined,
-});
-
-const Nav: React.FC<ITabsNavAndPanel> = ({ tabId, children }) => {
-  const { activeTab, setActiveTab } = useContext(TabsContext);
-
-  const handleClick = () => {
-    setActiveTab && setActiveTab(tabId);
-  };
-
-  return (
-    <TabsNav active={tabId === activeTab} onClick={handleClick}>
-      {children}
-    </TabsNav>
-  );
-};
-
-Nav.displayName = 'Tabs.Nav';
-
-// // // // // // // // // // // // // // // // // // // // // // // // //
-
-const Panel: React.FC<ITabsNavAndPanel> = ({ tabId, children }) => {
-  const { activeTab } = useContext(TabsContext);
-
-  if (tabId === activeTab) {
-    return <TabsPanels>{children}</TabsPanels>;
-  }
-  return null;
-};
-
-Panel.displayName = 'Tabs.Panel';
-
-// // // // // // // // // // // // // // // // // // // // // // // // //
-
-const Navs: React.FC = ({ children }) => {
-  return <TabsNavs>{children}</TabsNavs>;
-};
-
-Navs.displayName = 'Tabs.Navs';
-
-// // // // // // // // // // // // // // // // // // // // // // // // //
-
-const Panels: React.FC = ({ children }) => {
-  return <TabsPanels>{children}</TabsPanels>;
-};
-
-Panels.displayName = 'Tabs.Panels';
-
-// // // // // // // // // // // // // // // // // // // // // // // // //
+import React, { useState, useEffect } from 'react';
+import { ITabs, ISubTabs } from './tabs.types';
+import Navs from './partials/navs';
+import Nav from './partials/nav';
+import Panel from './partials/panel';
+import Panels from './partials/panels';
+import TabsContext from './tabs.context';
 
 const Tabs: React.FC<ITabs> & ISubTabs = ({
   activeTab,
