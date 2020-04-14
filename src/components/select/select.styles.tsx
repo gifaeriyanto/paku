@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { Styles } from 'react-select';
-import { Color, Typography, Radius } from '../../tokens';
+import { Color, Typography } from '../../tokens';
 import { ISelectWrapper } from './select.types';
+import Transition from '../../utils/transition';
 
 export const customStyles = (): Partial<Styles> => {
   const constrolStyle = (state: any) => {
@@ -17,17 +18,6 @@ export const customStyles = (): Partial<Styles> => {
 
     return {
       borderColor: Color.border,
-    };
-  };
-
-  const dropdownIndicatorColor = (state: any) => {
-    if (state.isFocused) {
-      return {
-        color: Color.primary.main,
-      };
-    }
-    return {
-      color: Color.border,
     };
   };
 
@@ -50,51 +40,40 @@ export const customStyles = (): Partial<Styles> => {
       ...provided,
       backgroundColor: 'transparent',
     }),
-    dropdownIndicator: (provided, state) => ({
+    dropdownIndicator: (provided) => ({
       ...provided,
-      ...dropdownIndicatorColor(state),
+      cursor: 'pointer',
+      color: Color.placeholder,
     }),
     multiValue: (provided) => ({
       ...provided,
-      color: Color.primary.main,
-      backgroundColor: Color.primary.text,
-      borderRadius: 30,
-      border: `1px solid ${Color.border}`,
-      fontWeight: 600,
-      lineHeight: '17px',
-      paddingLeft: 4,
+      backgroundColor: Color.white,
     }),
     multiValueLabel: (provided) => ({
       ...provided,
-      color: Color.primary.main,
+      fontSize: 14,
     }),
     multiValueRemove: (provided) => ({
       ...provided,
-      color: Color.primary.text,
-      backgroundColor: Color.primary.main,
-      borderRadius: 30,
-      width: 18,
-      height: 18,
-      margin: 3,
+      color: Color.border,
       cursor: 'pointer',
+      transition: Transition(['color'], '.1s linear'),
+      svg: {
+        width: 20,
+        height: 20,
+      },
       '&:hover': {
-        color: Color.primary.text,
-        backgroundColor: Color.primary.main,
+        backgroundColor: 'transparent',
+        color: Color.primary.main,
       },
     }),
     clearIndicator: (provided) => ({
       ...provided,
-      color: Color.neutral.text,
-      width: 18,
-      height: 18,
-      borderRadius: Radius.circle,
-      padding: 0,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      cursor: 'pointer',
+      color: Color.placeholder,
       svg: {
-        width: 14,
-        height: 14,
+        width: 20,
+        height: 20,
       },
     }),
   };

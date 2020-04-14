@@ -41,6 +41,7 @@ export const Basic = () => (
     isMulti={boolean('Multiple Select', false)}
     placeholder={text('Placeholder', 'Select...')}
     options={generateOptions(3)}
+    isClearable
   />
 );
 

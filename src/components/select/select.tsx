@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactSelect, { components, createFilter } from 'react-select';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosClose, IoIosCloseCircle } from 'react-icons/io';
 import { FixedSizeList as List } from 'react-window';
 import { customStyles, SelectWrapper, SelectOption } from './select.styles';
 import { ISelect, IMenuList } from './select.types';
@@ -51,6 +51,20 @@ const Select: React.FC<ISelect> = ({
         );
       }
       return <components.Option {...defaultProps} />;
+    },
+    ClearIndicator: (defaultProps: any) => {
+      return (
+        <components.ClearIndicator {...defaultProps}>
+          <IoIosClose />
+        </components.ClearIndicator>
+      );
+    },
+    MultiValueRemove: (defaultProps: any) => {
+      return (
+        <components.MultiValueRemove {...defaultProps}>
+          <IoIosCloseCircle />
+        </components.MultiValueRemove>
+      );
     },
     MenuList,
   };
