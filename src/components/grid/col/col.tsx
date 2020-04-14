@@ -4,7 +4,7 @@ import { ICol } from './col.types';
 
 const Col: React.FC<ICol> = ({ xs, sm, md, lg, xl, offset, children }) => (
   <ColStyled
-    className="col"
+    className="paku-grid-col"
     xs={xs}
     sm={sm}
     md={md}

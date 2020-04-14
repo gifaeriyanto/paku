@@ -62,9 +62,9 @@ export const ContainerStyled = styled.div<IContainerStyled>(
     boxSizing: 'border-box',
     ...setPadding(gutter, size, noPadding),
     ...isFluid(size, fluid),
-    '& .row': {
+    '& .paku-grid-row': {
       ...setRowSpacing(gutter),
-      '& > .col': {
+      '& > .paku-grid-col': {
         ...setColSpacing(gutter),
         ...setColVerticalSpace(verticalSpace),
       },
