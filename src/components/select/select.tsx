@@ -31,7 +31,6 @@ const MenuList = ({ options, maxHeight, getValue, children }: IMenuList) => (
 );
 
 const Select: React.FC<ISelect> = ({
-  variant = 'primary',
   customStyle,
   customOption,
   icon,
@@ -59,7 +58,7 @@ const Select: React.FC<ISelect> = ({
   return (
     <SelectWrapper>
       <ReactSelect
-        styles={customStyles(variant)}
+        styles={customStyles()}
         components={customComponents}
         classNamePrefix="paku-select"
         filterOption={createFilter({ ignoreAccents: false })}

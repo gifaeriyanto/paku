@@ -1,11 +1,10 @@
 import { Props as ReactSelectProps } from 'react-select';
-import { TVariants, TCustomStyle } from '../../utils/types';
+import { TCustomStyle } from '../../utils/types';
 
 export interface ISelect
   extends ReactSelectProps<{
     [key: string]: any;
   }> {
-  variant?: TVariants;
   customStyle?: TCustomStyle;
   customOption?: (option: any) => JSX.Element;
   icon?: React.ReactNode;

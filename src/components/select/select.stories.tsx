@@ -1,21 +1,13 @@
 import React from 'react';
 import faker from 'faker';
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { FaCaretDown } from 'react-icons/fa';
 import Select from './select';
 import dummyLargeData from './dummy.json';
-import { TVariants } from '../../utils/types';
 
 export default {
   title: 'Components/Select',
   component: Select,
-};
-
-const variants = {
-  Primary: 'primary',
-  Secondary: 'secondary',
-  Danger: 'danger',
-  Neutral: 'neutral',
 };
 
 type TOption = {
@@ -47,7 +39,6 @@ const generateOptions = (
 export const Basic = () => (
   <Select
     isMulti={boolean('Multiple Select', false)}
-    variant={select('Variant', variants, 'primary') as TVariants}
     placeholder={text('Placeholder', 'Select...')}
     options={generateOptions(3)}
   />
@@ -58,14 +49,6 @@ export const CustomIcon = () => (
 );
 
 export const CustomOptions = () => (
-  <Select
-    options={generateOptions(3, 'id', 'name')}
-    getOptionValue={(option: TOption) => option.id}
-    getOptionLabel={(option: TOption) => option.name}
-  />
-);
-
-export const CustomOptionsStyle = () => (
   <Select
     options={generateOptions(3, 'id', 'name', true)}
     getOptionValue={(option: TOption) => option.id}
@@ -86,6 +69,14 @@ export const CustomOptionsStyle = () => (
         {option.name}
       </div>
     )}
+  />
+);
+
+export const DynamicObjects = () => (
+  <Select
+    options={generateOptions(3, 'id', 'name')}
+    getOptionValue={(option: TOption) => option.id}
+    getOptionLabel={(option: TOption) => option.name}
   />
 );
 
