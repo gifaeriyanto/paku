@@ -1,8 +1,8 @@
-import { TVariants, TCustomStyle } from '../../utils/types';
+import { TVariants, TCustomStyle, TSize } from '../../utils/types';
 
 interface IButtonBase {
   customStyle?: TCustomStyle;
-  size?: 'small' | 'large';
+  size?: TSize;
   block?: boolean;
   outline?: boolean | 'withColor';
   icon?: React.ReactNode;

@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { IButtonStyled } from './button.types';
 import { Color, Typography, Radius } from '../../tokens';
-import { TVariants, TCustomStyle } from '../../utils/types';
+import { TVariants, TCustomStyle, TSize } from '../../utils/types';
 import { isOutline } from '../../utils/commonStyles';
 import Transition from '../../utils/transition';
 
-const setSize = (size?: 'small' | 'large') => {
+const setSize = (size?: TSize) => {
   switch (size) {
     case 'small':
       return {
