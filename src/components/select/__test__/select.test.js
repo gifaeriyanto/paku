@@ -75,6 +75,26 @@ describe('Select', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('multi values', () => {
+    const { container } = render(
+      <Select
+        isMulti
+        options={options}
+        value={[
+          {
+            label: 'Colten Zboncak',
+            value: 0,
+          },
+          {
+            label: 'Dr. Lillian Hodkiewicz',
+            value: 1,
+          },
+        ]}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   test('open menu', () => {
     const { container } = render(
       <Select options={options} value={options[0]} defaultMenuIsOpen />,

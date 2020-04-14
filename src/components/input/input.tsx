@@ -48,17 +48,17 @@ const Input: React.FC<IInput> = ({
     onBlur && onBlur(e);
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.currentTarget.value);
+    onChange && onChange(e);
+  };
+
   const handleShowPassword = () => {
     if (inputType === 'password') {
       setInputType('text');
     } else {
       setInputType('password');
     }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.currentTarget.value);
-    onChange && onChange(e);
   };
 
   const handleIncrement = () => {
@@ -102,6 +102,7 @@ const Input: React.FC<IInput> = ({
         <ShowPassword
           className="paku-input-addon-show-password"
           onClick={handleShowPassword}
+          data-testid="paku-input-show-password"
         >
           {inputType === 'password' ? (
             <AiOutlineEyeInvisible />
@@ -122,6 +123,7 @@ const Input: React.FC<IInput> = ({
             customStyle={NumberHandlerButtonStyles}
             onClick={handleDecrement}
             disabled={decrementDisabled()}
+            data-testid="paku-input-number-increment"
           >
             <IoMdRemove />
           </Button>
@@ -132,6 +134,7 @@ const Input: React.FC<IInput> = ({
             customStyle={NumberHandlerButtonStyles}
             onClick={handleIncrement}
             disabled={incrementDisabled()}
+            data-testid="paku-input-number-decrement"
           >
             <IoMdAdd />
           </Button>
@@ -159,6 +162,7 @@ const Input: React.FC<IInput> = ({
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         onChange={handleChange}
+        data-testid="paku-input"
         {...props}
       />
       {isAddonAfter()}
