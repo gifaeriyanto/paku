@@ -1,8 +1,8 @@
-import { TVariants, TCustomStyle } from '../../utils/types';
+import { TVariants, TCustomStyle, TSize } from '../../utils/types';
 
 interface IBadgeBase {
   customStyle?: TCustomStyle;
-  size?: 'small' | 'large';
+  size?: TSize;
   outline?: boolean | 'withColor';
   closeable?: boolean;
   rounded?: boolean;
