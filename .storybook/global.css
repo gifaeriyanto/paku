@@ -42,6 +42,10 @@
   padding: 30px;
 }
 
+.simplebar-content pre {
+  display: block !important;
+}
+
 .token.punctuation,
 .token.plain-text {
   color: #ffffff !important;
