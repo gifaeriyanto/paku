@@ -1,6 +1,6 @@
 {
   "name": "paku",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Design System with customizable styles, build on React and Emotion.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -20,7 +20,7 @@
     "url": "git+https://github.com/GifaEriyanto/paku.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "gifaeriyanto",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GifaEriyanto/paku/issues"
@@ -80,8 +80,5 @@
     "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

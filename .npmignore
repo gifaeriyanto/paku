@@ -3,6 +3,7 @@
 .prettierrc
 yarn-error.log
 tsconfig.json
+tsconfig.eslint.json
 
 # documentations
 docs/
