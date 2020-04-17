@@ -1,6 +1,6 @@
 {
   "name": "paku",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Design System with customizable styles, build on React and Emotion.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
