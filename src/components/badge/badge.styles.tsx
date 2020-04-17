@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 import { Color, Radius, Typography } from '../../tokens';
 import { IBadgeStyled } from './badge.types';
 import { isOutline } from '../../utils/commonStyles';
+import { TSize } from '../../utils/types';
 
-const setSize = (size?: 'small' | 'large') => {
+const setSize = (size?: TSize) => {
   switch (size) {
     case 'small':
       return {
