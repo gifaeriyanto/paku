@@ -1,6 +1,6 @@
 {
   "name": "paku",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Design System with customizable styles, build on React and Emotion.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -80,5 +80,8 @@
     "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
