@@ -1,6 +1,6 @@
 {
   "name": "paku",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Design System with customizable styles, build on React and Emotion.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -33,10 +33,9 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
-    "@types/uuid": "^7.0.2",
     "react-icons": "^3.9.0",
-    "react-window": "^1.8.5",
-    "uuid": "^7.0.2"
+    "react-select": "^3.1.0",
+    "react-window": "^1.8.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
@@ -66,6 +65,7 @@
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-emotion": "^10.0.33",
     "babel-preset-react-app": "^9.1.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^7.0.0",
