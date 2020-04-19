@@ -17,7 +17,14 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'import/no-extraneous-dependencies': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
