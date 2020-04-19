@@ -8,7 +8,9 @@ interface IBadgeBase {
   rounded?: boolean;
 }
 
-export interface IBadge extends IBadgeBase {
+export interface IBadge
+  extends IBadgeBase,
+    React.HTMLAttributes<HTMLDivElement> {
   variant?: TVariants;
   onClose?: () => void;
 }
