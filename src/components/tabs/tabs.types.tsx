@@ -3,7 +3,7 @@ export interface ITabsContext {
   setActiveTab?: (activeTab: string) => void;
 }
 
-export interface ITabsNavAndPanel {
+export interface ITabsNavAndPanel extends React.HTMLAttributes<HTMLDivElement> {
   tabId: string;
 }
 

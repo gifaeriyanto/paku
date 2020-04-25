@@ -62,4 +62,6 @@ const Badge: React.FC<IBadge> = forwardRef(
   },
 );
 
+Badge.displayName = 'Badge';
+
 export default Badge;

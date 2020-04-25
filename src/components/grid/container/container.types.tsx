@@ -4,7 +4,9 @@ interface IContainerBase {
   fluid?: boolean;
 }
 
-export interface IContainer extends IContainerBase {
+export interface IContainer
+  extends IContainerBase,
+    React.HTMLAttributes<HTMLDivElement> {
   gutter?: number;
   size?: number;
 }
