@@ -1,6 +1,9 @@
 export { default as Badge } from './badge';
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
+export { default as Divider } from './divider';
+export { default as Dropdown } from './dropdown';
 export { Container, Row, Col } from './grid';
+export { default as Input } from './input';
 export { default as Select } from './select';
 export { default as Tabs } from './tabs';
