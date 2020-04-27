@@ -4,10 +4,6 @@ import { render, fireEvent } from '@testing-library/react';
 import { FaSearch } from 'react-icons/fa';
 import Button from '..';
 
-const handleClick = (e) => {
-  return e;
-};
-
 describe('Button', () => {
   test('basic render', () => {
     const { container } = render(<Button>Button</Button>);
@@ -15,6 +11,8 @@ describe('Button', () => {
   });
 
   test('event click and doubleclick', () => {
+    const handleClick = jest.fn();
+
     const { container, getByText } = render(
       <Button onClick={handleClick}>Click</Button>,
     );

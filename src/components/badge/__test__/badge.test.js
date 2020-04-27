@@ -3,10 +3,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import Badge from '..';
 
-const handleClose = (e) => {
-  return e;
-};
-
 describe('Badge', () => {
   test('basic render', () => {
     const { container } = render(<Badge>Badge</Badge>);
@@ -56,6 +52,8 @@ describe('Badge', () => {
   });
 
   test('closeable', () => {
+    const handleClose = jest.fn();
+
     const { container, getByTestId } = render(
       <Badge closeable onClose={handleClose}>
         Badge

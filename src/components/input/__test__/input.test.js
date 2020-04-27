@@ -67,7 +67,7 @@ describe('Input', () => {
   });
 
   test('events', () => {
-    const handleEvent = () => null;
+    const handleEvent = jest.fn();
 
     const { container, getByTestId } = render(
       <Input

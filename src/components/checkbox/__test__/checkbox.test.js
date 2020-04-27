@@ -26,7 +26,6 @@ describe('Checkbox', () => {
 
   test('event change', () => {
     let checked = false;
-
     const handleChange = (checkedStatus) => {
       checked = Boolean(checkedStatus);
     };

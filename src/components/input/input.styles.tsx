@@ -22,6 +22,7 @@ export const InputWrapper = styled.div<IInputWrapper>(
     display: 'flex',
     overflow: 'hidden',
     alignItems: 'center',
+    backgroundColor: Color.white,
     border: `1px solid ${Color.border}`,
     borderRadius: Radius.normal,
     transition: Transition(['box-shadow', 'border-color'], '.1s linear'),
