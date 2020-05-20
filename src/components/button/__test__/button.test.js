@@ -50,14 +50,10 @@ describe('Button', () => {
   });
 
   test('disabled', () => {
-    const handleClick = jest.fn();
-    const { getByTestId } = render(
-      <Button onClick={handleClick} disabled>
-        Button
-      </Button>,
+    const { container } = render(<Button disabled>Button</Button>);
+    expect(container.getElementsByTagName('button')[0]).toHaveAttribute(
+      'disabled',
     );
-    fireEvent.click(getByTestId('paku-button'));
-    expect(handleClick).not.toBeCalled();
   });
 
   test('sizing', () => {
