@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import { FaSearch } from 'react-icons/fa';
 import Button from '..';
+import { Color } from '../../../tokens';
 
 describe('Button', () => {
   test('basic render', () => {
@@ -12,58 +13,76 @@ describe('Button', () => {
 
   test('event click and doubleclick', () => {
     const handleClick = jest.fn();
-
-    const { container, getByText } = render(
-      <Button onClick={handleClick}>Click</Button>,
+    const { getByTestId } = render(
+      <Button onClick={handleClick}>Button</Button>,
     );
-
-    fireEvent.click(getByText('Click'));
-    fireEvent.doubleClick(getByText('Click'));
-
-    expect(container).toMatchSnapshot();
+    fireEvent.click(getByTestId('paku-button'));
+    expect(handleClick).toBeCalled();
   });
 
   test('variants', () => {
-    const { container } = render(
-      <>
-        <Button variant="primary">Button</Button>
-        <Button variant="secondary">Button</Button>
-        <Button variant="danger">Button</Button>
-        <Button variant="neutral">Button</Button>
-      </>,
+    const { getByTestId, rerender } = render(
+      <Button variant="primary">Button</Button>,
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-button')).toHaveStyle({
+      backgroundColor: Color.primary.main,
+    });
+
+    rerender(<Button variant="secondary">Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({
+      backgroundColor: Color.secondary.main,
+    });
+
+    rerender(<Button variant="danger">Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({
+      backgroundColor: Color.danger.main,
+    });
+
+    rerender(<Button variant="neutral">Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({
+      backgroundColor: Color.neutral.main,
+    });
   });
 
   test('block Style', () => {
-    const { container } = render(<Button block>Button</Button>);
-    expect(container).toMatchSnapshot();
+    const { getByTestId } = render(<Button block>Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({ width: '100%' });
   });
 
   test('disabled', () => {
-    const { container } = render(<Button disabled>Button</Button>);
-    expect(container).toMatchSnapshot();
+    const handleClick = jest.fn();
+    const { getByTestId } = render(
+      <Button onClick={handleClick} disabled>
+        Button
+      </Button>,
+    );
+    fireEvent.click(getByTestId('paku-button'));
+    expect(handleClick).not.toBeCalled();
   });
 
   test('sizing', () => {
-    const { container } = render(
-      <>
-        <Button size="small">Button</Button>
-        <Button>Button</Button>
-        <Button size="large">Button</Button>
-      </>,
+    const { getByTestId, rerender } = render(
+      <Button size="small">Button</Button>,
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-button')).toHaveStyle({ padding: '6px 9px' });
+
+    rerender(<Button size="medium">Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({ padding: '8px 12px' });
+
+    rerender(<Button size="large">Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({ padding: '10px 15px' });
   });
 
   test('outline style', () => {
-    const { container } = render(
-      <>
-        <Button outline>Button</Button>
-        <Button outline="withColor">Button</Button>
-      </>,
-    );
-    expect(container).toMatchSnapshot();
+    const { getByTestId, rerender } = render(<Button outline>Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({
+      borderColor: Color.border,
+    });
+
+    rerender(<Button outline="withColor">Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({
+      borderColor: Color.primary.main,
+    });
   });
 
   test('with icon', () => {
@@ -76,6 +95,6 @@ describe('Button', () => {
         </Button>
       </>,
     );
-    expect(container).toMatchSnapshot();
+    expect(container.getElementsByTagName('svg')).toHaveLength(3);
   });
 });

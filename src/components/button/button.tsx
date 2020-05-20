@@ -33,6 +33,7 @@ const Button: React.FC<IButton> = forwardRef(
         iconRight={iconRight}
         iconOnly={iconOnly}
         ref={ref}
+        data-testid="paku-button"
         {...props}
       >
         {renderIcon()}
