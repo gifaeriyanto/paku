@@ -42,7 +42,6 @@ export const BadgeStyled = styled.div<IBadgeStyled>(
     ...Typography.base,
     color: Color[variant].text,
     backgroundColor: Color[variant].main,
-    borderRadius: Radius.normal,
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'space-between',

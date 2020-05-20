@@ -34,10 +34,10 @@ describe('Checkbox', () => {
       <Checkbox label="Checkbox" onChange={handleChange} />,
     );
 
-    fireEvent.click(getByTestId('checkbox'));
+    fireEvent.click(getByTestId('paku-checkbox'));
     expect(checked).toBe(true);
 
-    fireEvent.click(getByTestId('checkbox'));
+    fireEvent.click(getByTestId('paku-checkbox'));
     expect(checked).toBe(false);
   });
 });

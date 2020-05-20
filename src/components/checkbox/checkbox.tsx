@@ -29,7 +29,7 @@ const Checkbox: React.FC<ICheckbox> = forwardRef(
         checked={isChecked}
         disabled={disabled}
         error={error}
-        data-testid="checkbox"
+        data-testid="paku-checkbox"
       >
         <input
           type="checkbox"

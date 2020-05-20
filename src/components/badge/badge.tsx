@@ -50,6 +50,7 @@ const Badge: React.FC<IBadge> = forwardRef(
           rounded={rounded}
           customStyle={customStyle}
           ref={ref}
+          data-testid="paku-badge"
           {...props}
         >
           <span>{children}</span>
