@@ -41,10 +41,19 @@ const Checkbox: React.FC<ICheckbox> = forwardRef(
           ref={ref}
           {...props}
         />
-        <CheckboxBox className="paku-checkbox-box" checked={isChecked}>
+        <CheckboxBox
+          className="paku-checkbox-box"
+          data-testid="paku-checkbox-box"
+          checked={isChecked}
+        >
           <IoMdCheckmark />
         </CheckboxBox>
-        <CheckboxLabel className="paku-checkbox-label">{label}</CheckboxLabel>
+        <CheckboxLabel
+          className="paku-checkbox-label"
+          data-testid="paku-checkbox-label"
+        >
+          {label}
+        </CheckboxLabel>
       </CheckboxStyled>
     );
   },
