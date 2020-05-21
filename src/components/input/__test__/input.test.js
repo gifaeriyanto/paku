@@ -12,14 +12,17 @@ describe('Input', () => {
   });
 
   test('with addons', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Input
         addonAfter=".com"
         addonBefore="https://"
         placeholder="Your site"
       />,
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-input-addon-before')).toHaveTextContent(
+      'https://',
+    );
+    expect(getByTestId('paku-input-addon-after')).toHaveTextContent('.com');
   });
 
   test('type password', () => {
@@ -29,11 +32,17 @@ describe('Input', () => {
 
     // Show Password
     fireEvent.click(getByTestId('paku-input-show-password'));
+    expect(container.getElementsByTagName('input')[0]).toHaveAttribute(
+      'type',
+      'text',
+    );
 
     // Hide Password
     fireEvent.click(getByTestId('paku-input-show-password'));
-
-    expect(container).toMatchSnapshot();
+    expect(container.getElementsByTagName('input')[0]).toHaveAttribute(
+      'type',
+      'password',
+    );
   });
 
   test('type number', () => {
@@ -42,9 +51,10 @@ describe('Input', () => {
     );
 
     fireEvent.click(getByTestId('paku-input-number-increment'));
-    fireEvent.click(getByTestId('paku-input-number-decrement'));
+    expect(container.getElementsByTagName('input')[0].value).toBe('1');
 
-    expect(container).toMatchSnapshot();
+    fireEvent.click(getByTestId('paku-input-number-decrement'));
+    expect(container.getElementsByTagName('input')[0].value).toBe('0');
   });
 
   test('type number with step, min and max', () => {
@@ -60,16 +70,19 @@ describe('Input', () => {
     );
 
     fireEvent.change(getByTestId('paku-input'), { target: { value: '2' } });
-    fireEvent.click(getByTestId('paku-input-number-increment'));
-    fireEvent.click(getByTestId('paku-input-number-decrement'));
+    expect(container.getElementsByTagName('input')[0].value).toBe('2');
 
-    expect(container).toMatchSnapshot();
+    fireEvent.click(getByTestId('paku-input-number-increment'));
+    expect(container.getElementsByTagName('input')[0].value).toBe('7');
+
+    fireEvent.click(getByTestId('paku-input-number-decrement'));
+    expect(container.getElementsByTagName('input')[0].value).toBe('2');
   });
 
   test('events', () => {
     const handleEvent = jest.fn();
 
-    const { container, getByTestId } = render(
+    const { getByTestId } = render(
       <Input
         placeholder="Basic usage"
         onFocus={handleEvent}
@@ -79,10 +92,13 @@ describe('Input', () => {
     );
 
     fireEvent.focus(getByTestId('paku-input'));
-    fireEvent.change(getByTestId('paku-input'), { target: { value: 'value' } });
-    fireEvent.blur(getByTestId('paku-input'));
+    expect(handleEvent).toBeCalledTimes(1);
 
+    fireEvent.change(getByTestId('paku-input'), { target: { value: 'value' } });
+    expect(handleEvent).toBeCalledTimes(2);
     expect(getByTestId('paku-input').value).toBe('value');
-    expect(container).toMatchSnapshot();
+
+    fireEvent.blur(getByTestId('paku-input'));
+    expect(handleEvent).toBeCalledTimes(3);
   });
 });

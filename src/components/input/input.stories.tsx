@@ -8,7 +8,10 @@ export default {
 };
 
 export const Basic = () => (
-  <Input placeholder={text('Placeholder', 'Type here...')} />
+  <Input
+    placeholder={text('Placeholder', 'Type here...')}
+    error={boolean('Error', false)}
+  />
 );
 
 export const CustomStyle = () => (

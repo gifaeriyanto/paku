@@ -19,6 +19,7 @@ const Input: React.FC<IInput> = forwardRef(
       customStyle,
       addonAfter,
       addonBefore,
+      error,
       onFocus,
       onBlur,
       onChange,
@@ -92,7 +93,10 @@ const Input: React.FC<IInput> = forwardRef(
     const isAddonBefore = () => {
       if (addonBefore) {
         return (
-          <InputAddonBefore className="paku-input-addon-before">
+          <InputAddonBefore
+            className="paku-input-addon-before"
+            data-testid="paku-input-addon-before"
+          >
             {addonBefore}
           </InputAddonBefore>
         );
@@ -119,7 +123,7 @@ const Input: React.FC<IInput> = forwardRef(
 
       if (type === 'number' && !noExtraControl) {
         return (
-          <NumberHandler className="paku-input-addon-increment">
+          <NumberHandler className="paku-input-addon-number-handler">
             <Button
               size="small"
               variant="neutral"
@@ -127,7 +131,7 @@ const Input: React.FC<IInput> = forwardRef(
               customStyle={NumberHandlerButtonStyles}
               onClick={handleDecrement}
               disabled={decrementDisabled()}
-              data-testid="paku-input-number-increment"
+              data-testid="paku-input-number-decrement"
             >
               <IoMdRemove />
             </Button>
@@ -138,7 +142,7 @@ const Input: React.FC<IInput> = forwardRef(
               customStyle={NumberHandlerButtonStyles}
               onClick={handleIncrement}
               disabled={incrementDisabled()}
-              data-testid="paku-input-number-decrement"
+              data-testid="paku-input-number-increment"
             >
               <IoMdAdd />
             </Button>
@@ -148,7 +152,10 @@ const Input: React.FC<IInput> = forwardRef(
 
       if (addonAfter) {
         return (
-          <InputAddonAfter className="paku-input-addon-after">
+          <InputAddonAfter
+            className="paku-input-addon-after"
+            data-testid="paku-input-addon-after"
+          >
             {addonAfter}
           </InputAddonAfter>
         );
@@ -158,7 +165,7 @@ const Input: React.FC<IInput> = forwardRef(
     };
 
     return (
-      <InputWrapper focus={focus} customStyle={customStyle}>
+      <InputWrapper focus={focus} customStyle={customStyle} error={error}>
         {isAddonBefore()}
         <InputStyled
           type={inputType}

@@ -3,30 +3,46 @@ import { Color, Radius, Typography } from '../../tokens';
 import Transition from '../../utils/transition';
 import { IInputWrapper } from './input.types';
 
-const isFocus = (focus: boolean) => {
+const isFocus = (focus: boolean, error?: boolean) => {
+  let color = Color.primary.main;
+  if (error) {
+    color = Color.danger.main;
+  }
+
   if (focus) {
     return {
-      borderColor: Color.primary.main,
-      boxShadow: `0 0 0 1px ${Color.primary.main}`,
+      borderColor: color,
+      boxShadow: `0 0 0 1px ${color}`,
       '&:hover': {
-        borderColor: Color.primary.main,
+        borderColor: color,
       },
     };
   }
   return null;
 };
 
+const isError = (error?: boolean) => {
+  if (error) {
+    return {
+      border: `1px solid ${Color.danger.main}`,
+    };
+  }
+  return {
+    border: `1px solid ${Color.border}`,
+  };
+};
+
 export const InputWrapper = styled.div<IInputWrapper>(
-  ({ customStyle, focus }) => ({
+  ({ customStyle, focus, error }) => ({
     ...Typography.base,
     display: 'flex',
     overflow: 'hidden',
     alignItems: 'center',
     backgroundColor: Color.white,
-    border: `1px solid ${Color.border}`,
     borderRadius: Radius.normal,
     transition: Transition(['box-shadow', 'border-color'], '.1s linear'),
-    ...isFocus(focus),
+    ...isFocus(focus, error),
+    ...isError(error),
     ...customStyle,
   }),
 );

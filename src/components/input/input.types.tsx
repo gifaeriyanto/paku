@@ -4,6 +4,7 @@ export type TInputType = 'text' | 'password' | 'number';
 
 export interface IInputBase {
   customStyle?: TCustomStyle;
+  error?: boolean;
 }
 
 export interface IInput
