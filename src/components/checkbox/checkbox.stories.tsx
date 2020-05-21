@@ -18,3 +18,9 @@ export const Basic = () => (
     checked
   />
 );
+
+Basic.story = {
+  parameters: {
+    jest: ['__test__/checkbox.test.js'],
+  },
+};

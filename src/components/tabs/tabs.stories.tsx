@@ -28,3 +28,9 @@ export const Basic = () => (
     </Tabs.Panels>
   </Tabs>
 );
+
+Basic.story = {
+  parameters: {
+    jest: ['__test__/tabs.test.js'],
+  },
+};
