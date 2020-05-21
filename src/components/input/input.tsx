@@ -165,7 +165,12 @@ const Input: React.FC<IInput> = forwardRef(
     };
 
     return (
-      <InputWrapper focus={focus} customStyle={customStyle} error={error}>
+      <InputWrapper
+        focus={focus}
+        customStyle={customStyle}
+        error={error}
+        data-testid="paku-input-wrapper"
+      >
         {isAddonBefore()}
         <InputStyled
           type={inputType}

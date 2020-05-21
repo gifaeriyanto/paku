@@ -2,6 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import Input from '..';
+import { Color } from '../../../tokens';
 
 describe('Input', () => {
   test('basic render', () => {
@@ -9,6 +10,15 @@ describe('Input', () => {
       <Input placeholder="Basic usage" value="Value" />,
     );
     expect(container).toMatchSnapshot();
+  });
+
+  test('error', () => {
+    const { getByTestId } = render(
+      <Input placeholder="Basic usage" value="Value" error />,
+    );
+    expect(getByTestId('paku-input-wrapper')).toHaveStyle({
+      borderColor: Color.danger.main,
+    });
   });
 
   test('with addons', () => {
