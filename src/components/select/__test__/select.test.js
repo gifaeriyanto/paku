@@ -2,6 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import Select from '..';
+import { Color } from '../../../tokens';
 
 const options = [
   {
@@ -99,7 +100,9 @@ describe('Select', () => {
     const { container } = render(
       <Select options={options} value={options[0]} defaultMenuIsOpen />,
     );
-    expect(container).toMatchSnapshot();
+    expect(container.getElementsByClassName('paku-select__menu')).toHaveLength(
+      1,
+    );
   });
 
   test('large options', () => {
@@ -113,29 +116,22 @@ describe('Select', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('variants', () => {
-    const { container } = render(
-      <>
-        <Select variant="primary" value={options[1]} options={options} />
-        <Select variant="secondary" value={options[1]} options={options} />
-        <Select variant="danger" value={options[1]} options={options} />
-        <Select variant="neutral" value={options[1]} options={options} />
-      </>,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   test('custom icon', () => {
     const { container } = render(
-      <Select value={options[1]} options={options} icon={<div>+</div>} />,
+      <Select
+        value={options[1]}
+        options={options}
+        icon={<div className="paku-select-icon">+</div>}
+      />,
     );
-    expect(container).toMatchSnapshot();
+    expect(container.getElementsByClassName('paku-select-icon')).toHaveLength(
+      1,
+    );
   });
 
   test('custom option', () => {
     const { container } = render(
       <Select
-        value={options[1]}
         options={options}
         customOption={(option) => (
           <b>
@@ -145,16 +141,22 @@ describe('Select', () => {
         defaultMenuIsOpen
       />,
     );
-    expect(container).toMatchSnapshot();
+    expect(container.getElementsByTagName('b')[0]).toHaveTextContent(
+      `${options[0].value} - ${options[0].label}`,
+    );
   });
 
-  test('events', () => {
+  test('focus event style', () => {
     const { container, getByRole } = render(
       <Select options={options} defaultMenuIsOpen />,
     );
 
     fireEvent.focus(getByRole('textbox'));
 
-    expect(container).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName('paku-select__control')[0],
+    ).toHaveStyle({
+      borderColor: Color.primary.main,
+    });
   });
 });
