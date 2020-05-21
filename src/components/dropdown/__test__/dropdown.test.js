@@ -19,7 +19,7 @@ describe('Dropdown', () => {
   });
 
   test('align right', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Dropdown>
         <Dropdown.Toggle>Show Menu</Dropdown.Toggle>
         <Dropdown.Menu right>
@@ -28,20 +28,9 @@ describe('Dropdown', () => {
         </Dropdown.Menu>
       </Dropdown>,
     );
-    expect(container).toMatchSnapshot();
-  });
-
-  test('no hover effect', () => {
-    const { container } = render(
-      <Dropdown>
-        <Dropdown.Toggle>Show Menu</Dropdown.Toggle>
-        <Dropdown.Menu noHoverEffect>
-          <Dropdown.Item active>Item 1</Dropdown.Item>
-          <Dropdown.Item>Item 2</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>,
-    );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-dropdown-menu')).toHaveStyle({
+      right: 0,
+    });
   });
 
   test('events', () => {
@@ -50,10 +39,10 @@ describe('Dropdown', () => {
       selected = value;
     };
 
-    const { container, getByText } = render(
+    const { getByText } = render(
       <Dropdown>
         <Dropdown.Toggle>Show Menu</Dropdown.Toggle>
-        <Dropdown.Menu noHoverEffect>
+        <Dropdown.Menu>
           <Dropdown.Item active>Item 1</Dropdown.Item>
           <Dropdown.Item onClick={handleClick}>Item 2</Dropdown.Item>
         </Dropdown.Menu>
@@ -69,6 +58,5 @@ describe('Dropdown', () => {
     fireEvent.click(getByText('Item 2'));
 
     expect(selected).toBe('Item 2');
-    expect(container).toMatchSnapshot();
   });
 });

@@ -22,6 +22,7 @@ const Item: React.FC<IDropdownItem> = forwardRef(
         color={color}
         ref={ref}
         as={as}
+        data-testid="paku-dropdown-item"
         {...props}
       >
         {children}

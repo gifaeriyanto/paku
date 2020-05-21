@@ -8,7 +8,13 @@ const Menu: React.FC<IDropdownMenu> = forwardRef(
     const { show } = useContext(DropdownContext);
 
     return (
-      <MenuStyled show={show} right={right} ref={ref} {...props}>
+      <MenuStyled
+        show={show}
+        right={right}
+        ref={ref}
+        data-testid="paku-dropdown-menu"
+        {...props}
+      >
         {children}
       </MenuStyled>
     );
