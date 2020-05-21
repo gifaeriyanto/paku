@@ -12,16 +12,12 @@ describe('Checkbox', () => {
 
   test('default checked', () => {
     const { container } = render(<Checkbox label="Checkbox" checked />);
-    expect(container.getElementsByTagName('input')[0]).toHaveAttribute(
-      'checked',
-    );
+    expect(container.getElementsByTagName('input')[0]).toBeChecked();
   });
 
   test('disabled', () => {
     const { container } = render(<Checkbox label="Checkbox" disabled />);
-    expect(container.getElementsByTagName('input')[0]).toHaveAttribute(
-      'disabled',
-    );
+    expect(container.getElementsByTagName('input')[0]).toBeDisabled();
   });
 
   test('error', () => {
