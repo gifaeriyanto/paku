@@ -14,6 +14,13 @@ const ContentStyled = styled.div<ISampleContent>(({ color, height }) => ({
 const SampleContent: React.FC<ISampleContent> = ({
   color = '#eee',
   height = 50,
-}) => <ContentStyled color={color} height={height} />;
+}) => (
+  <ContentStyled
+    color={color}
+    height={height}
+    className="paku-grid-sample-content"
+    data-testid="paku-grid-sample-content"
+  />
+);
 
 export default SampleContent;

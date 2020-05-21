@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import { Container, Row, Col } from '..';
 import SampleContent from '../sampleContent';
+import { Breakpoint } from '../../../tokens/mediaQuery/mediaQuery';
 
 describe('Grid', () => {
   test('basic render', () => {
@@ -22,21 +23,27 @@ describe('Grid', () => {
   });
 
   test('fluid container', () => {
-    const { container } = render(<Container fluid>Lorem ipsum</Container>);
-    expect(container).toMatchSnapshot();
+    const { getByTestId } = render(<Container fluid>Lorem ipsum</Container>);
+    expect(getByTestId('paku-grid-container')).toHaveStyle({
+      maxWidth: '100%',
+    });
   });
 
   test('custom max width and gutter of the container', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Container size={800} gutter={10}>
         Lorem ipsum
       </Container>,
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-grid-container')).toHaveStyle({
+      maxWidth: '800px',
+      paddingLeft: '5px',
+      paddingRight: '5px',
+    });
   });
 
   test('no padding left and right on the container', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Container noPadding>
         <Row>
           <Col>
@@ -48,11 +55,14 @@ describe('Grid', () => {
         </Row>
       </Container>,
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-grid-container')).toHaveStyle({
+      paddingLeft: 0,
+      paddingRight: 0,
+    });
   });
 
   test('vertical space', () => {
-    const { container } = render(
+    const { getAllByTestId } = render(
       <Container verticalSpace={16}>
         <Row>
           <Col>
@@ -64,7 +74,12 @@ describe('Grid', () => {
         </Row>
       </Container>,
     );
-    expect(container).toMatchSnapshot();
+    expect(getAllByTestId('paku-grid-col')[0]).toHaveStyle({
+      marginBottom: '16px',
+    });
+    expect(getAllByTestId('paku-grid-col')[1]).toHaveStyle({
+      marginBottom: '0px',
+    });
   });
 
   test('responsive column', () => {
@@ -86,13 +101,15 @@ describe('Grid', () => {
   });
 
   test('centering column in row', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Row center>
         <Col>
           <SampleContent />
         </Col>
       </Row>,
     );
-    expect(container).toMatchSnapshot();
+    expect(getByTestId('paku-grid-row')).toHaveStyle({
+      alignItems: 'center',
+    });
   });
 });

@@ -16,6 +16,7 @@ const Col: React.FC<ICol> = forwardRef(
       xl={xl}
       offset={offset}
       ref={ref}
+      data-testid="paku-grid-col"
       {...props}
     >
       {children}
