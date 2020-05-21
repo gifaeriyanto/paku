@@ -18,7 +18,7 @@ const setColumn = (
       },
     };
   }
-  return {};
+  return null;
 };
 
 const isAutoColumn = (noColumnSet: boolean) => {
@@ -28,7 +28,7 @@ const isAutoColumn = (noColumnSet: boolean) => {
       flexGrow: 1,
     };
   }
-  return {};
+  return null;
 };
 
 const isOffset = (offset?: number) => {
@@ -38,7 +38,7 @@ const isOffset = (offset?: number) => {
       marginLeft: `${percentage(num)}%`,
     };
   }
-  return {};
+  return null;
 };
 
 export const ColStyled = styled.div<ICol>(({ xs, sm, md, lg, xl, offset }) => ({

@@ -33,5 +33,5 @@ export const isOutline = (
       ...events,
     };
   }
-  return {};
+  return null;
 };

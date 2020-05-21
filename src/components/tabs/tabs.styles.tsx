@@ -15,7 +15,7 @@ const isActiveNav = (active?: boolean) => {
       borderColor: Color.primary.main,
     };
   }
-  return {};
+  return null;
 };
 
 export const TabsNav = styled.div<ITabsNavStyled>(({ active }) => ({

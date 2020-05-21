@@ -19,7 +19,7 @@ const isDisabled = (checked: boolean, disabled: boolean) => {
       },
     };
   }
-  return {};
+  return null;
 };
 
 const isError = (error: boolean, checked: boolean) => {
@@ -30,7 +30,7 @@ const isError = (error: boolean, checked: boolean) => {
       },
     };
   }
-  return {};
+  return null;
 };
 
 export const CheckboxStyled = styled.label<ICheckboxStyled>(

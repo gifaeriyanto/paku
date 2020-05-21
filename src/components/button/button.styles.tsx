@@ -57,7 +57,7 @@ const isDisabled = (variant: TVariants, disabled?: boolean) => {
       },
     };
   }
-  return {};
+  return null;
 };
 
 const withIcon = (iconOnly?: boolean, iconRight?: boolean) => {

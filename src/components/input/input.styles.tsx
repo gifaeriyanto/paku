@@ -13,7 +13,7 @@ const isFocus = (focus: boolean) => {
       },
     };
   }
-  return {};
+  return null;
 };
 
 export const InputWrapper = styled.div<IInputWrapper>(

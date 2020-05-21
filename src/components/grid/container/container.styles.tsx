@@ -13,18 +13,18 @@ const isFluid = (size?: string | number, fluid?: boolean) => {
 };
 
 const setPadding = (gutter: number, size: number, noPadding?: boolean) => {
-  if (!noPadding) {
+  if (noPadding) {
     return {
-      paddingLeft: gutter / 2,
-      paddingRight: gutter / 2,
+      paddingLeft: 0,
+      paddingRight: 0,
+      [`@media (max-width: ${size + gutter * 2}px)`]: {
+        overflow: 'hidden',
+      },
     };
   }
   return {
-    paddingLeft: 0,
-    paddingRight: 0,
-    [`@media (max-width: ${size + gutter * 2}px)`]: {
-      overflow: 'hidden',
-    },
+    paddingLeft: gutter / 2,
+    paddingRight: gutter / 2,
   };
 };
 
@@ -53,7 +53,7 @@ const setColVerticalSpace = (verticalSpace?: number) => {
       },
     };
   }
-  return {};
+  return null;
 };
 
 export const ContainerStyled = styled.div<IContainerStyled>(
