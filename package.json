@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "start": "start-storybook -p 6001",
+    "start": "start-storybook -p 6000",
     "build": "rm -rf ./lib && tsc",
     "build-storybook": "build-storybook -o public",
     "now": "build-storybook -o public && now",
