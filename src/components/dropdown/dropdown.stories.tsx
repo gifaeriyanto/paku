@@ -46,6 +46,45 @@ export const AsLink = () => (
   </Dropdown>
 );
 
+export const WithSubMenus = () => (
+  <Dropdown>
+    <Dropdown.Toggle>Click here</Dropdown.Toggle>
+    <Dropdown.Menu right={boolean('Right Menu', false)}>
+      <Dropdown.Item onClick={action('onClick')}>Option 1</Dropdown.Item>
+      <Dropdown.Item>
+        <Dropdown.Toggle>Option 2</Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={action('onClick')}>
+            Sub Option 2.1
+          </Dropdown.Item>
+          <Dropdown.Item onClick={action('onClick')}>
+            Sub Option 2.2
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown.Item>
+      <Dropdown.Item>
+        <Dropdown.Toggle>Option 3</Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={action('onClick')}>
+            Sub Option 3.1
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Dropdown.Toggle>Sub Option 3.2</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={action('onClick')}>
+                Sub Option 3.2.1
+              </Dropdown.Item>
+              <Dropdown.Item onClick={action('onClick')}>
+                Sub Option 3.2.2
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+);
+
 Basic.story = {
   parameters: {
     jest: ['__test__/dropdown.test.js'],

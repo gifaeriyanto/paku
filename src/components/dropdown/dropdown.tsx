@@ -30,7 +30,7 @@ const Dropdown: React.FC<IDropdown> & IDropdownPartials = ({
   });
 
   return (
-    <Wrapper ref={wrapperRef} {...props}>
+    <Wrapper ref={wrapperRef} {...props} className="paku-dropdown">
       <DropdownContext.Provider
         value={{
           show: showState,

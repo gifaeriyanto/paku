@@ -18,6 +18,26 @@ describe('Dropdown', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('with sub menus', () => {
+    const { container } = render(
+      <Dropdown>
+        <Dropdown.Toggle>Show Menu</Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item>Item 1</Dropdown.Item>
+          <Dropdown.Item>
+            <Dropdown.Toggle>Item 2</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item>Sub Item 1</Dropdown.Item>
+              <Dropdown.Item>Sub Item 2</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   test('align right', () => {
     const { getByTestId } = render(
       <Dropdown>

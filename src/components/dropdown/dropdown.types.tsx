@@ -21,7 +21,6 @@ export interface IDropdownMenu extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export interface IMenuStyled extends React.HTMLAttributes<HTMLDivElement> {
-  show: boolean;
   right?: boolean;
 }
 

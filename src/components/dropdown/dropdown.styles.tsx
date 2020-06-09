@@ -5,6 +5,9 @@ import Transition from '../../utils/transition';
 
 export const ToggleStyled = styled.div({
   cursor: 'pointer',
+  svg: {
+    display: 'none',
+  },
 });
 
 const isActive = (active?: boolean) => {
@@ -13,8 +16,6 @@ const isActive = (active?: boolean) => {
       backgroundColor: Color.primary.main,
       color: Color.primary.text,
       padding: '12px 17px',
-      marginLeft: -1,
-      marginRight: -1,
       '&:hover': {
         backgroundColor: Color.primary.main,
         color: Color.primary.text,
@@ -29,6 +30,7 @@ const isActive = (active?: boolean) => {
 };
 
 export const ItemStyled = styled.div<IItemStyled>(({ active, color }) => ({
+  position: 'relative',
   display: 'block',
   minWidth: 160,
   padding: '12px 16px',
@@ -36,21 +38,35 @@ export const ItemStyled = styled.div<IItemStyled>(({ active, color }) => ({
   color: color || 'inherit',
   textDecoration: 'none',
   transition: Transition(['background-color', 'color'], '.1s linear'),
+  '&:hover > .paku-dropdown-toggle + .paku-dropdown-menu': {
+    display: 'block !important',
+  },
+  '.paku-dropdown-toggle': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    svg: {
+      display: 'block',
+    },
+  },
   ...isActive(active),
 }));
 
-export const MenuStyled = styled.div<IMenuStyled>(({ show, right }) => ({
+export const MenuStyled = styled.div<IMenuStyled>(({ right }) => ({
   position: 'absolute',
-  display: show ? 'block' : 'none',
+  display: 'none',
   borderRadius: Radius.normal,
-  top: 'calc(100% + 4px)',
   backgroundColor: Color.white,
   right: right ? 0 : undefined,
   zIndex: 9,
   paddingTop: 8,
   paddingBottom: 8,
-  boxShadow: '0 20px 36px rgba(0,0,0,.2)',
-  border: `1px solid ${Color.border}`,
+  boxShadow: '0 10px 36px rgba(0,0,0,.4)',
+  '.paku-dropdown-menu': {
+    top: '0 !important',
+    left: '100%',
+    display: 'none !important',
+  },
 }));
 
 export const Wrapper = styled.div({

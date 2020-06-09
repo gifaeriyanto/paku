@@ -1,4 +1,5 @@
 import React, { useContext, forwardRef } from 'react';
+import { FiChevronRight } from 'react-icons/fi';
 import { ToggleStyled } from '../dropdown.styles';
 import DropdownContext from '../dropdown.context';
 
@@ -11,8 +12,14 @@ const Toggle: React.FC<React.HTMLAttributes<HTMLDivElement>> = forwardRef(
     };
 
     return (
-      <ToggleStyled onClick={handleClick} ref={ref} {...props}>
+      <ToggleStyled
+        onClick={handleClick}
+        ref={ref}
+        className="paku-dropdown-toggle"
+        {...props}
+      >
         {children}
+        <FiChevronRight />
       </ToggleStyled>
     );
   },

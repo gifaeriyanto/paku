@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "start": "start-storybook -p 6000",
+    "start": "start-storybook -p 6001",
     "build": "rm -rf ./lib && tsc",
     "build-storybook": "build-storybook -o public",
     "now": "build-storybook -o public && now",
@@ -33,7 +33,9 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
+    "@types/gsap": "^1.20.2",
     "@types/react-select": "^3.0.11",
+    "gsap": "^3.3.1",
     "react-icons": "^3.9.0",
     "react-select": "^3.1.0",
     "react-window": "^1.8.5"
