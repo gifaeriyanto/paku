@@ -124,7 +124,7 @@ export const ButtonStyled = styled.button<IButtonStyled>(
   }) => ({
     ...Typography.base,
     appearance: 'unset',
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
     borderRadius: Radius.normal,
     outline: 'none',
