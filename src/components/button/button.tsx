@@ -13,6 +13,7 @@ const Button: React.FC<IButton> = forwardRef(
       icon,
       iconRight,
       iconOnly,
+      negative,
       ...props
     },
     ref: React.Ref<HTMLButtonElement>,
@@ -32,6 +33,7 @@ const Button: React.FC<IButton> = forwardRef(
         block={block}
         iconRight={iconRight}
         iconOnly={iconOnly}
+        negative={negative}
         ref={ref}
         data-testid="paku-button"
         {...props}

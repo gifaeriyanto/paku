@@ -29,6 +29,7 @@ export const Basic = () => (
     disabled={boolean('Disabled', false)}
     block={boolean('Block', false)}
     outline={boolean('Outline', false)}
+    negative={boolean('Negative', false)}
   >
     {text('Text', 'Button')}
   </Button>

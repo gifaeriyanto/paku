@@ -92,8 +92,36 @@ const withIcon = (iconOnly?: boolean, iconRight?: boolean) => {
   return finalStyle;
 };
 
+const isNegative = (variant: TVariants, negative?: boolean) => {
+  if (negative) {
+    return {
+      color: Color[variant].main,
+      backgroundColor: Color[variant].text,
+      '&:hover': {
+        backgroundColor: '#F5F5F5',
+      },
+      '&:active': {
+        backgroundColor: '#F2F2F2',
+      },
+      '&:focus': {
+        boxShadow: `0 0 0 4px ${Color[variant].outline}`,
+      },
+    };
+  }
+  return null;
+};
+
 export const ButtonStyled = styled.button<IButtonStyled>(
-  ({ variant, block, size, outline, disabled, iconOnly, iconRight }) => ({
+  ({
+    variant,
+    block,
+    size,
+    outline,
+    disabled,
+    iconOnly,
+    iconRight,
+    negative,
+  }) => ({
     ...Typography.base,
     appearance: 'unset',
     display: 'flex',
@@ -122,6 +150,7 @@ export const ButtonStyled = styled.button<IButtonStyled>(
     ...setSize(size),
     ...isOutline(variant, outline),
     ...isDisabled(variant, disabled),
+    ...isNegative(variant, negative),
   }),
   ({ customStyle }) => ({ ...customStyle }),
 );

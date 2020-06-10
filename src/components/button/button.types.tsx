@@ -9,6 +9,7 @@ interface IButtonBase {
   iconRight?: boolean;
   iconOnly?: boolean;
   disabled?: boolean;
+  negative?: boolean;
 }
 
 export interface IButton

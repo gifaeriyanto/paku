@@ -93,4 +93,11 @@ describe('Button', () => {
     );
     expect(container.getElementsByTagName('svg')).toHaveLength(3);
   });
+
+  test('negative style', () => {
+    const { getByTestId } = render(<Button negative>Button</Button>);
+    expect(getByTestId('paku-button')).toHaveStyle({
+      backgroundColor: '#FFFFFF',
+    });
+  });
 });
