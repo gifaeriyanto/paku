@@ -1,4 +1,4 @@
-import { IColor } from './colors.types';
+import { IColor } from './color.types';
 
 /*
   COLOR PATTERN
